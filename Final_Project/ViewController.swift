@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
@@ -19,7 +20,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    
 
-
+    @IBAction func registerPress(_ sender: Any) {
+        
+        performSegue(withIdentifier: "goToRegister", sender: self)
+        
+        
+        
+    }
+    
+    @IBAction func loginPress(_ sender: Any) {
+        
+        
+        performSegue(withIdentifier: "goToLogin", sender: self)
+        
+    }
 }
 

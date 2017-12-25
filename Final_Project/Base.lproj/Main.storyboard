@@ -26,7 +26,8 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="4dB-Ab-QFg" kind="show" id="G09-IS-REi"/>
+                                    <action selector="loginPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAz-B3-gXD"/>
+                                    <segue destination="4dB-Ab-QFg" kind="show" identifier="goToLogin" id="G09-IS-REi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNT-du-CUh">
@@ -38,7 +39,8 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="92o-Y6-tYz" kind="show" id="7A4-5L-Bbb"/>
+                                    <action selector="registerPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTN-uM-76T"/>
+                                    <segue destination="92o-Y6-tYz" kind="show" identifier="goToRegister" id="7A4-5L-Bbb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -46,6 +48,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="47Q-aw-nB8"/>
+                    <connections>
+                        <outlet property="loginPress" destination="8y7-uf-6cr" id="T7d-KQ-hsk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +59,7 @@
         <!--Register-->
         <scene sceneID="bH8-AA-xIW">
             <objects>
-                <viewController title="Register" id="92o-Y6-tYz" sceneMemberID="viewController">
+                <viewController title="Register" id="92o-Y6-tYz" customClass="RegisterViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fQ9-Uv-xAI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -99,7 +104,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <segue destination="dMG-Rz-z8I" kind="show" id="5F0-5U-xJz"/>
+                                    <action selector="createUser:" destination="92o-Y6-tYz" eventType="touchUpInside" id="Bn2-xv-7gi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -107,6 +112,13 @@
                         <viewLayoutGuide key="safeArea" id="YFY-S7-7dg"/>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="C7l-jT-Mql"/>
+                    <connections>
+                        <outlet property="createAccount" destination="SKo-9Z-3tU" id="D5d-OQ-ryo"/>
+                        <outlet property="email" destination="172-z4-18p" id="HBy-mq-nuw"/>
+                        <outlet property="fName" destination="3FJ-Fh-cUx" id="8Mh-BQ-1Bw"/>
+                        <outlet property="lName" destination="fQ9-Uv-xAI" id="475-m2-nHn"/>
+                        <outlet property="password" destination="Peu-1g-zmQ" id="fJc-TL-civ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-NV-QfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -115,7 +127,7 @@
         <!--Login-->
         <scene sceneID="EwC-Md-6b4">
             <objects>
-                <viewController title="Login" id="4dB-Ab-QFg" sceneMemberID="viewController">
+                <viewController title="Login" id="4dB-Ab-QFg" customClass="LoginViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bfu-fU-A4I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,6 +138,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="email:" destination="TaC-Yw-tQJ" eventType="editingDidEnd" id="HXd-lX-O0N"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Password" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inr-si-VAO">
                                 <rect key="frame" x="39" y="207" width="300" height="30"/>
@@ -139,6 +154,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="loginPress:" destination="4dB-Ab-QFg" eventType="touchUpInside" id="Z9D-gj-bSp"/>
                                     <segue destination="dMG-Rz-z8I" kind="show" id="DRS-9C-Bui"/>
                                 </connections>
                             </button>
@@ -147,8 +163,13 @@
                         <viewLayoutGuide key="safeArea" id="VzA-6V-MwI"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="gwv-Yw-lAa"/>
+                    <connections>
+                        <outlet property="email" destination="jYK-0d-72Y" id="e6L-ye-gep"/>
+                        <outlet property="password" destination="inr-si-VAO" id="s3w-Bx-ctH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtB-ym-nYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="TaC-Yw-tQJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="790" y="581"/>
         </scene>
@@ -202,7 +223,4 @@
             <point key="canvasLocation" x="-822" y="-170"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="DRS-9C-Bui"/>
-    </inferredMetricsTieBreakers>
 </document>
