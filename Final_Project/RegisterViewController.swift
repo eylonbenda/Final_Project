@@ -42,6 +42,7 @@ class RegisterViewController: UIViewController {
             } else {
                 
                 print("Registration sucsseful!")
+                self.performSegue(withIdentifier: "goToMainView", sender: self)
             }
             
             

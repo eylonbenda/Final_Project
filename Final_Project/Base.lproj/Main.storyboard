@@ -26,7 +26,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bAz-B3-gXD"/>
+                                    <action selector="loginPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFR-BV-Dq5"/>
                                     <segue destination="4dB-Ab-QFg" kind="show" identifier="goToLogin" id="G09-IS-REi"/>
                                 </connections>
                             </button>
@@ -39,7 +39,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <action selector="registerPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xTN-uM-76T"/>
+                                    <action selector="registerPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eVS-sy-Bhy"/>
                                     <segue destination="92o-Y6-tYz" kind="show" identifier="goToRegister" id="7A4-5L-Bbb"/>
                                 </connections>
                             </button>
@@ -49,7 +49,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome" id="47Q-aw-nB8"/>
                     <connections>
-                        <outlet property="loginPress" destination="8y7-uf-6cr" id="T7d-KQ-hsk"/>
+                        <segue destination="dMG-Rz-z8I" kind="show" identifier="goToMainView" id="ZPO-hR-Czu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -76,7 +76,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-Fh-cUx">
                                 <rect key="frame" x="37" y="256" width="300" height="30"/>
@@ -104,7 +104,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Account"/>
                                 <connections>
-                                    <action selector="createUser:" destination="92o-Y6-tYz" eventType="touchUpInside" id="Bn2-xv-7gi"/>
+                                    <action selector="createUser:" destination="92o-Y6-tYz" eventType="touchUpInside" id="d0R-up-5WV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -113,11 +113,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="C7l-jT-Mql"/>
                     <connections>
-                        <outlet property="createAccount" destination="SKo-9Z-3tU" id="D5d-OQ-ryo"/>
                         <outlet property="email" destination="172-z4-18p" id="HBy-mq-nuw"/>
                         <outlet property="fName" destination="3FJ-Fh-cUx" id="8Mh-BQ-1Bw"/>
                         <outlet property="lName" destination="fQ9-Uv-xAI" id="475-m2-nHn"/>
                         <outlet property="password" destination="Peu-1g-zmQ" id="fJc-TL-civ"/>
+                        <segue destination="dMG-Rz-z8I" kind="show" identifier="goToMainView" id="t4x-cx-LZo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-NV-QfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,8 +154,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="loginPress:" destination="4dB-Ab-QFg" eventType="touchUpInside" id="Z9D-gj-bSp"/>
-                                    <segue destination="dMG-Rz-z8I" kind="show" id="DRS-9C-Bui"/>
+                                    <action selector="loginPress:" destination="4dB-Ab-QFg" eventType="touchUpInside" id="8L2-bA-bSx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -166,17 +165,18 @@
                     <connections>
                         <outlet property="email" destination="jYK-0d-72Y" id="e6L-ye-gep"/>
                         <outlet property="password" destination="inr-si-VAO" id="s3w-Bx-ctH"/>
+                        <segue destination="dMG-Rz-z8I" kind="show" identifier="goToMainViewFromLogin" id="QGZ-ED-N0R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtB-ym-nYP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="TaC-Yw-tQJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="790" y="581"/>
+            <point key="canvasLocation" x="790" y="597"/>
         </scene>
         <!--Title-->
         <scene sceneID="mFE-Mu-YMP">
             <objects>
-                <tableViewController id="dMG-Rz-z8I" sceneMemberID="viewController">
+                <tableViewController id="dMG-Rz-z8I" customClass="MainWindowVCTableViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KbD-rE-EoN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,12 +197,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="MhR-Pt-0F7">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="U2G-fU-EiT"/>
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="U2G-fU-EiT">
+                            <connections>
+                                <action selector="logOut:" destination="dMG-Rz-z8I" id="41I-J2-ThG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ty2-gN-mPZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639" y="-170"/>
+            <point key="canvasLocation" x="1594" y="-155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4QA-Zt-SFm">
@@ -223,4 +227,7 @@
             <point key="canvasLocation" x="-822" y="-170"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZPO-hR-Czu"/>
+    </inferredMetricsTieBreakers>
 </document>

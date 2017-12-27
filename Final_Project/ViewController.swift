@@ -14,6 +14,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        if Auth.auth().currentUser != nil {
+            performSegue(withIdentifier: "goToMainView", sender: self)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

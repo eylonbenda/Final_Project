@@ -7,12 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
-    
-    
     @IBOutlet weak var password: UITextField!
     
     
@@ -30,7 +29,21 @@ class LoginViewController: UIViewController {
     @IBAction func loginPress(_ sender: Any) {
         
         
-        
+        Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
+            
+            if error != nil {
+                
+                print(error!)
+                
+            } else {
+                
+                print("succesful login!")
+                self.performSegue(withIdentifier: "goToMainViewFromLogin", sender: self)
+                
+            }
+            	
+        }
+    
     }
     
     /*
