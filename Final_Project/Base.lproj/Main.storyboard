@@ -205,10 +205,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OTR-t0-KkB">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="muscleGroup" translatesAutoresizingMaskIntoConstraints="NO" id="OTR-t0-KkB">
                                             <rect key="frame" x="0.0" y="0.0" width="211.5" height="119.5"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABS&amp;Core" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIl-uG-oe7">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="ABS&amp;Core" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIl-uG-oe7">
                                             <rect key="frame" x="261.5" y="8" width="85.5" height="103.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <nil key="textColor"/>
@@ -362,6 +362,9 @@
             <point key="canvasLocation" x="-822" y="-170"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="muscleGroup" width="150" height="156"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="RHZ-Ae-mO7"/>
     </inferredMetricsTieBreakers>

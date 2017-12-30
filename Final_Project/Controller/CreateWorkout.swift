@@ -14,6 +14,7 @@ class CreateWorkout: UITableViewController {
     @IBOutlet var tableMuscle: UITableView!
     
     var muscleGroups = [MuscleGroup]()
+    var images = [UIImage(named: "chest"), UIImage(named: "abs"), UIImage(named: "legs"), UIImage(named: "biceps"), UIImage(named: "back")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,6 +80,7 @@ class CreateWorkout: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "muscle_group_cell", for: indexPath) as! MuscleGroupCell
         
         cell.groupMuscleName.text = muscleGroups[indexPath.row].name
+        cell.groupMuscleImage.image = images[indexPath.row]
     
         return cell
     }
