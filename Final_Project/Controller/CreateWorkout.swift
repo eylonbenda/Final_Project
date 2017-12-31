@@ -13,6 +13,7 @@ class CreateWorkout: UITableViewController {
     
     @IBOutlet var tableMuscle: UITableView!
     
+    var row : Int = 0
     var muscleGroups = [MuscleGroup]()
     var images = [UIImage(named: "chest"), UIImage(named: "abs"), UIImage(named: "legs"), UIImage(named: "biceps"), UIImage(named: "back")]
 
@@ -74,6 +75,9 @@ class CreateWorkout: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return muscleGroups.count
     }
+    
+    
+    
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,9 +89,11 @@ class CreateWorkout: UITableViewController {
         return cell
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        var row : Int = indexPath.row
+         row  = indexPath.row
         print("row \(indexPath.row) was selected")
         performSegue(withIdentifier: "showExercises", sender: self)
         
@@ -97,6 +103,48 @@ class CreateWorkout: UITableViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showExercises"  {
+
+            let des = segue.destination as! ExercisesRepoTableViewController
+
+            if row == 0 {
+
+                muscleGroups[0].name = "chest"
+                des.muscleGroupName =  muscleGroups[0].name
+                des.muscleGroup = muscleGroups[0]
+                
+
+            } else if row == 1 {
+
+                muscleGroups[1].name = "abs"
+                des.muscleGroupName =  muscleGroups[1].name
+                des.muscleGroup = muscleGroups[1]
+
+            } else if row == 2 {
+                
+                muscleGroups[2].name = "legs"
+                des.muscleGroupName =  muscleGroups[2].name
+                des.muscleGroup = muscleGroups[2]
+                
+            } else if row == 3 {
+                
+                muscleGroups[3].name = "arms"
+                des.muscleGroupName =  muscleGroups[3].name
+                des.muscleGroup = muscleGroups[3]
+                
+            } else if row == 4 {
+                
+                muscleGroups[4].name = "back"
+                des.muscleGroupName =  muscleGroups[4].name
+                des.muscleGroup = muscleGroups[4]
+            }
+        
+            
+            
+    }
+            
+        
         
     }
     

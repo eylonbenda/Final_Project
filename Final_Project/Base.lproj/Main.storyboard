@@ -246,22 +246,39 @@
             </objects>
             <point key="canvasLocation" x="3524" y="-437.63118440779613"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Exercises Repo Table View Controller-->
         <scene sceneID="Hd1-ZN-eIL">
             <objects>
-                <tableViewController id="u0t-Dg-mQN" sceneMemberID="viewController">
+                <tableViewController id="u0t-Dg-mQN" customClass="ExercisesRepoTableViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Q9I-zU-IdR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g43-JN-rtI">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="exercise_cell" rowHeight="120" id="g43-JN-rtI" customClass="ExercisesRepoCellTableViewCell" customModule="Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g43-JN-rtI" id="hfS-OP-BQn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-Js-roy">
+                                            <rect key="frame" x="8" y="0.0" width="218" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-cM-rbQ">
+                                            <rect key="frame" x="276" y="49" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="exerciseDescription" destination="Sbz-cM-rbQ" id="FTF-YS-AQf"/>
+                                    <outlet property="exerciseImage" destination="N7Y-Js-roy" id="Rbv-nq-CF5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -269,10 +286,13 @@
                             <outlet property="delegate" destination="u0t-Dg-mQN" id="bET-eE-sBa"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="exercisesTable" destination="Q9I-zU-IdR" id="oeW-sU-rhK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0a-T5-18G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4338" y="-430"/>
+            <point key="canvasLocation" x="4336.8000000000002" y="-438.53073463268368"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="LCc-sm-ftm">
@@ -366,6 +386,6 @@
         <image name="muscleGroup" width="150" height="156"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RHZ-Ae-mO7"/>
+        <segue reference="L1e-Ns-ab0"/>
     </inferredMetricsTieBreakers>
 </document>

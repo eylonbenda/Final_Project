@@ -13,10 +13,10 @@ class Exercise {
     
     
     var name : String = ""
+    var urlImage : String = ""
     
     
-    
-    
+
     
     
     

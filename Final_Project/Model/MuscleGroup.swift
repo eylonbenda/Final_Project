@@ -14,6 +14,14 @@ class MuscleGroup {
     var exercises = [Exercise]()
     var name : String = ""
     
+    
+    
+    func getName() -> String {
+    
+        return self.name
+    
+    }
+   
 
 
 

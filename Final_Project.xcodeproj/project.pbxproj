@@ -27,6 +27,8 @@
 		F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */; };
 		F19D11DA1FF15285003AE817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19D11D91FF15182003AE817 /* GoogleService-Info.plist */; };
 		F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11DD1FF15575003AE817 /* LoginViewController.swift */; };
+		F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */; };
+		F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F19D11D91FF15182003AE817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F19D11DD1FF15575003AE817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepoTableViewController.swift; sourceTree = "<group>"; };
+		F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepoCellTableViewCell.swift; sourceTree = "<group>"; };
 		F6388FDC00DEA71530D0333B /* Pods-Final_ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectTests/Pods-Final_ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -139,6 +143,8 @@
 				8400AB361FF53EA800969441 /* CreateWorkout.swift */,
 				8400AB381FF542E900969441 /* MuscleGroupCell.swift */,
 				84010ED61FF55899008A4D59 /* WorkoutsVC.swift */,
+				F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */,
+				F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -526,6 +532,8 @@
 				84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */,
 				84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */,
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
+				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
+				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
