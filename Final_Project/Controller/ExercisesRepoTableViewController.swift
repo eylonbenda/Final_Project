@@ -13,6 +13,7 @@ class ExercisesRepoTableViewController: UITableViewController {
     
     
     @IBOutlet var exercisesTable: UITableView!
+    
     var muscleGroupName : String = ""
     var muscleGroup = MuscleGroup()
     
@@ -47,17 +48,6 @@ class ExercisesRepoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
         
-//        switch muscleGroupName {
-//
-//            case "chest" :
-//
-//                cell.exerciseDescription.text = 0
-//
-//
-//
-//
-//        }
-
         
 
         return cell

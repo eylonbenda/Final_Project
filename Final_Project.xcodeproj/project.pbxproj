@@ -23,6 +23,7 @@
 		84EE55C31FEFF07C00588A61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE55C11FEFF07C00588A61 /* LaunchScreen.storyboard */; };
 		84EE55CE1FEFF07C00588A61 /* Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55CD1FEFF07C00588A61 /* Final_ProjectTests.swift */; };
 		84EE55D91FEFF07C00588A61 /* Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */; };
+		84F84CD81FF986EC000A0ACF /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
 		F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */; };
 		F19D11DA1FF15285003AE817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19D11D91FF15182003AE817 /* GoogleService-Info.plist */; };
@@ -74,6 +75,7 @@
 		84EE55D41FEFF07C00588A61 /* Final_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Final_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		84EE55DA1FEFF07C00588A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			children = (
 				8400AB411FF5483100969441 /* Exercise.swift */,
 				8400AB431FF5485600969441 /* MuscleGroup.swift */,
+				84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,
+				84F84CD81FF986EC000A0ACF /* ModelFirebase.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,
