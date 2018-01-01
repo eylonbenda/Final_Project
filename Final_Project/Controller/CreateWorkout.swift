@@ -20,6 +20,8 @@ class CreateWorkout: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // insert muscle-group array data
         insertData(&muscleGroups)
         

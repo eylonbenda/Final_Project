@@ -17,6 +17,24 @@ class Exercise {
     var urlVideo : String = ""
     
     
+     init(name : String , urlImage : String , urlVideo : String) {
+        
+        self.name = name
+        self.urlImage = urlImage
+        self.urlVideo = urlVideo
+        
+    }
+    
+    
+    init(fromJson : [String : Any]) {
+        
+        name = fromJson["name"] as! String
+        urlVideo = fromJson["urlvideo"] as! String
+        urlImage = fromJson["urlImage"] as! String
+        
+    }
+    
+    
     //convert execrcise obj to json obj
     func toJson() -> [String:Any] {
         
