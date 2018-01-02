@@ -14,7 +14,7 @@ class ExercisesRepoTableViewController: UITableViewController {
     
     @IBOutlet var exercisesTable: UITableView!
     
-    var muscleGroupName : String = ""
+    
     var muscleGroup = MuscleGroup()
     
     override func viewDidLoad() {
@@ -41,12 +41,37 @@ class ExercisesRepoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return muscleGroup.exercises.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
+        
+        let exercise = muscleGroup.exercises[indexPath.row]
+        
+        if muscleGroup.name == "Chest" {
+         // load from firebase all chest exercises
+           let url = NSURL(string: exercise.urlImage)
+            
+            URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
+                
+                if error != nil {
+                    print(error!)
+                }
+                
+                DispatchQueue.main.async(execute: {
+                    cell.exerciseImage.image = UIImage(data: data!)
+                    cell.exerciseDescription.text = exercise.name
+                })
+                
+            }).resume()
+            
+        } else if muscleGroup.name == "ABS&Core" {
+            
+            
+            
+        }
         
         
 

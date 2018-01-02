@@ -14,6 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    var model : ModelFirebase?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

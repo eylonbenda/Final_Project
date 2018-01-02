@@ -41,6 +41,7 @@ class RegisterViewController: UIViewController {
                 
                 print(error!)
             } else {
+                //TODO: add to user database
                 
                 print("Registration sucsseful!")
                 self.performSegue(withIdentifier: "goToMainView", sender: self)

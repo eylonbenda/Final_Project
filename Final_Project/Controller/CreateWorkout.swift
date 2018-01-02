@@ -111,34 +111,18 @@ class CreateWorkout: UITableViewController {
             let des = segue.destination as! ExercisesRepoTableViewController
 
             if row == 0 {
-
-                muscleGroups[0].name = "chest"
-                des.muscleGroupName =  muscleGroups[0].name
                 des.muscleGroup = muscleGroups[0]
-                
 
             } else if row == 1 {
-
-                muscleGroups[1].name = "abs"
-                des.muscleGroupName =  muscleGroups[1].name
                 des.muscleGroup = muscleGroups[1]
 
             } else if row == 2 {
-                
-                muscleGroups[2].name = "legs"
-                des.muscleGroupName =  muscleGroups[2].name
                 des.muscleGroup = muscleGroups[2]
                 
             } else if row == 3 {
-                
-                muscleGroups[3].name = "arms"
-                des.muscleGroupName =  muscleGroups[3].name
                 des.muscleGroup = muscleGroups[3]
                 
             } else if row == 4 {
-                
-                muscleGroups[4].name = "back"
-                des.muscleGroupName =  muscleGroups[4].name
                 des.muscleGroup = muscleGroups[4]
             }
         

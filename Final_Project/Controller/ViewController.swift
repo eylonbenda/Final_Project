@@ -10,34 +10,23 @@ import UIKit
 import Firebase
 
 class ViewController: UIViewController {
+    
+    var model : ModelFirebase?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var model = ModelFirebase()
+         model = ModelFirebase()
         
-        model.addNewExercise(exercise: Exercise(name: "exe1", urlImage: "skjdfgh", urlVideo: "jdsfsd"))
-         model.addNewExercise(exercise: Exercise(name: "exe2", urlImage: "omer.com", urlVideo: "eylon.com"))
+//        model.getAllChestExercises { (exercises) in
+//            for exe in exercises!{
+//
+//                print(exe.name , exe.urlImage)
+//        }
+//
         
         
-        model.getExercise(exerciseName: "exe1") { (exercise) in
-            
-            print("*********************")
-            print(exercise!.name , exercise!.urlVideo , exercise!.urlImage)
-            
-        }
-        
-        model.getAllExercises { (exercises) in
-            
-            for exe in exercises! {
-                
-                print(exe.name , exe.urlImage)
-                
-            }
-            
-            
-        }
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -68,6 +57,23 @@ class ViewController: UIViewController {
         
         
         performSegue(withIdentifier: "goToLogin", sender: self)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToLogin" {
+            
+            let des = segue.destination as! LoginViewController
+            des.model = model
+            
+        } else if segue.identifier == "goToRegister" {
+            
+            let des = segue.destination as! RegisterViewController
+            
+        }
+        
         
     }
 }

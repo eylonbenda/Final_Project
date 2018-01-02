@@ -9,16 +9,21 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import FirebaseStorage
 
 
 class ModelFirebase {
     
     let ref : DatabaseReference?
+    let storageRef : StorageReference?
     
     init() {
         FirebaseApp.configure()
         ref = Database.database().reference()
         
+        // configure storage Firebase
+        let storage = Storage.storage()
+        storageRef = storage.reference()
         
         
     }
@@ -50,6 +55,33 @@ class ModelFirebase {
         })
         
     }
+    
+    func getAllChestExercises(callback : @escaping ([Exercise]?) -> Void){
+        
+        let myRef = ref?.child("MuscleGroup").child("Chest").child("exercises")
+        myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let values = snapshot.value as? [String :  [String : Any] ] {
+                
+                var exercisesArr = [Exercise]()
+                for exeJson in values{
+                    
+                    let exe = Exercise(fromJson: exeJson.value)
+                    exercisesArr.append(exe)
+                }
+                
+                callback(exercisesArr)
+                
+            } else {
+                
+                callback(nil)
+            }
+            
+        })
+        
+        
+    }
+    
     
     
     func getAllExercises(callback : @escaping ([Exercise]?) -> Void){

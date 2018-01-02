@@ -29,7 +29,7 @@ class Exercise {
     init(fromJson : [String : Any]) {
         
         name = fromJson["name"] as! String
-        urlVideo = fromJson["urlvideo"] as! String
+        urlVideo = fromJson["urlVideo"] as! String
         urlImage = fromJson["urlImage"] as! String
         
     }
@@ -41,7 +41,7 @@ class Exercise {
         var jsonObj = [String:Any]()
         jsonObj["name"] = name
         jsonObj["urlImage"] = urlImage
-        jsonObj["urlvideo"] = urlVideo
+        jsonObj["urlVideo"] = urlVideo
         return jsonObj
         
     }
