@@ -262,18 +262,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-Js-roy">
-                                            <rect key="frame" x="8" y="0.0" width="218" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-cM-rbQ">
-                                            <rect key="frame" x="276" y="49" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbz-cM-rbQ">
+                                            <rect key="frame" x="275" y="8" width="42" height="103.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N7Y-Js-roy">
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="119.5"/>
+                                        </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="N7Y-Js-roy" firstAttribute="top" secondItem="hfS-OP-BQn" secondAttribute="top" id="0nc-lg-rdH"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Sbz-cM-rbQ" secondAttribute="bottom" id="4OO-dL-VM1"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sbz-cM-rbQ" secondAttribute="trailing" constant="50" id="QoN-Hm-2cx"/>
+                                        <constraint firstItem="Sbz-cM-rbQ" firstAttribute="leading" secondItem="N7Y-Js-roy" secondAttribute="trailing" constant="50" id="ga5-iQ-liJ"/>
+                                        <constraint firstAttribute="bottom" secondItem="N7Y-Js-roy" secondAttribute="bottom" id="o38-ad-qEf"/>
+                                        <constraint firstItem="Sbz-cM-rbQ" firstAttribute="top" secondItem="hfS-OP-BQn" secondAttribute="topMargin" id="rFp-WZ-iy5"/>
+                                        <constraint firstItem="N7Y-Js-roy" firstAttribute="leading" secondItem="hfS-OP-BQn" secondAttribute="leading" id="vV1-oU-9dr"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="exerciseDescription" destination="Sbz-cM-rbQ" id="FTF-YS-AQf"/>

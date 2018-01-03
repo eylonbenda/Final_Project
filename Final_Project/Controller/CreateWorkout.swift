@@ -10,7 +10,7 @@ import UIKit
 
 class CreateWorkout: UITableViewController {
     
-    
+    var model : ExerciseModelFirebase?
     @IBOutlet var tableMuscle: UITableView!
     
     var row : Int = 0
@@ -20,7 +20,7 @@ class CreateWorkout: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        model = ExerciseModelFirebase()
         
         // insert muscle-group array data
         insertData(&muscleGroups)
@@ -111,19 +111,31 @@ class CreateWorkout: UITableViewController {
             let des = segue.destination as! ExercisesRepoTableViewController
 
             if row == 0 {
-                des.muscleGroup = muscleGroups[0]
+                //load from firebase chest-exercises
+                model?.getAllChestExercises(callback: { (exercises) in
+                    
+                    if let exes = exercises {
+                        
+                        for exer in exes{
+                            print(exer.name)
+                        }
+                        self.muscleGroups[0].exercises = exes
+                        
+                    }
+                })
+                des.muscleGroupExercises = muscleGroups[0]
 
             } else if row == 1 {
-                des.muscleGroup = muscleGroups[1]
+                des.muscleGroupExercises = muscleGroups[1]
 
             } else if row == 2 {
-                des.muscleGroup = muscleGroups[2]
+                des.muscleGroupExercises = muscleGroups[2]
                 
             } else if row == 3 {
-                des.muscleGroup = muscleGroups[3]
+                des.muscleGroupExercises = muscleGroups[3]
                 
             } else if row == 4 {
-                des.muscleGroup = muscleGroups[4]
+                des.muscleGroupExercises = muscleGroups[4]
             }
         
             

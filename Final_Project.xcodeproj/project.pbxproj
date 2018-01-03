@@ -14,6 +14,8 @@
 		8400AB421FF5483100969441 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AB411FF5483100969441 /* Exercise.swift */; };
 		8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8400AB431FF5485600969441 /* MuscleGroup.swift */; };
 		84010ED71FF55899008A4D59 /* WorkoutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84010ED61FF55899008A4D59 /* WorkoutsVC.swift */; };
+		843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6D1FFCDC68001D1B8C /* User.swift */; };
+		843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */; };
 		84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */; };
 		84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55B51FEFF07C00588A61 /* AppDelegate.swift */; };
 		84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55B71FEFF07C00588A61 /* ViewController.swift */; };
@@ -23,7 +25,7 @@
 		84EE55C31FEFF07C00588A61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE55C11FEFF07C00588A61 /* LaunchScreen.storyboard */; };
 		84EE55CE1FEFF07C00588A61 /* Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55CD1FEFF07C00588A61 /* Final_ProjectTests.swift */; };
 		84EE55D91FEFF07C00588A61 /* Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */; };
-		84F84CD81FF986EC000A0ACF /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */; };
+		84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
 		F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */; };
 		F19D11DA1FF15285003AE817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19D11D91FF15182003AE817 /* GoogleService-Info.plist */; };
@@ -60,6 +62,8 @@
 		8400AB411FF5483100969441 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		8400AB431FF5485600969441 /* MuscleGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleGroup.swift; sourceTree = "<group>"; };
 		84010ED61FF55899008A4D59 /* WorkoutsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsVC.swift; sourceTree = "<group>"; };
+		843F9F6D1FFCDC68001D1B8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowVCTableViewController.swift; sourceTree = "<group>"; };
 		84EE55B21FEFF07C00588A61 /* Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE55B51FEFF07C00588A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,7 +79,7 @@
 		84EE55D41FEFF07C00588A61 /* Final_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Final_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		84EE55DA1FEFF07C00588A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModelFirebase.swift; sourceTree = "<group>"; };
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,7 +134,9 @@
 			children = (
 				8400AB411FF5483100969441 /* Exercise.swift */,
 				8400AB431FF5485600969441 /* MuscleGroup.swift */,
-				84F84CD71FF986EC000A0ACF /* ModelFirebase.swift */,
+				84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */,
+				843F9F6D1FFCDC68001D1B8C /* User.swift */,
+				843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -530,6 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */,
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
 				84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */,
 				84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */,
@@ -537,8 +544,9 @@
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
+				843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,
-				84F84CD81FF986EC000A0ACF /* ModelFirebase.swift in Sources */,
+				84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,

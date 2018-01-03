@@ -15,10 +15,13 @@ class ExercisesRepoTableViewController: UITableViewController {
     @IBOutlet var exercisesTable: UITableView!
     
     
-    var muscleGroup = MuscleGroup()
+    var muscleGroupExercises = MuscleGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configureTableView()
+        exercisesTable.reloadData()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -41,17 +44,18 @@ class ExercisesRepoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return muscleGroup.exercises.count
+        return muscleGroupExercises.exercises.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
         
-        let exercise = muscleGroup.exercises[indexPath.row]
+        let exercise = muscleGroupExercises.exercises[indexPath.row]
         
-        if muscleGroup.name == "Chest" {
+        if muscleGroupExercises.name == "Chest" {
          // load from firebase all chest exercises
+            
            let url = NSURL(string: exercise.urlImage)
             
             URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
@@ -67,7 +71,7 @@ class ExercisesRepoTableViewController: UITableViewController {
                 
             }).resume()
             
-        } else if muscleGroup.name == "ABS&Core" {
+        } else if muscleGroupExercises.name == "ABS&Core" {
             
             
             
@@ -77,6 +81,15 @@ class ExercisesRepoTableViewController: UITableViewController {
 
         return cell
     }
+    
+    
+    func configureTableView(){
+        
+        exercisesTable.estimatedRowHeight = 120.0
+        exercisesTable.rowHeight =  UITableViewAutomaticDimension
+        
+    }
+    
     
 
     /*

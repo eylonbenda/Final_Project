@@ -11,13 +11,12 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    var model : ModelFirebase?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-         model = ModelFirebase()
         
 //        model.getAllChestExercises { (exercises) in
 //            for exe in exercises!{
@@ -66,7 +65,7 @@ class ViewController: UIViewController {
         if segue.identifier == "goToLogin" {
             
             let des = segue.destination as! LoginViewController
-            des.model = model
+            
             
         } else if segue.identifier == "goToRegister" {
             
