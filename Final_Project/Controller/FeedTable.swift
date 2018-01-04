@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedTable: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -19,7 +22,34 @@ class FeedTable: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if Auth.auth().currentUser != nil {
+            // User is signed in.
+            // ...
+        } else {
+            
+            performSegue(withIdentifier: "goToAuth", sender: self)
+            
+        }
+    }
+    @IBAction func LogOutPress(_ sender: Any) {
+        do {
+            print("rrrrr")
+            try Auth.auth().signOut()
+            print("sighned out!")
+            //self.dismiss(animated: true, completion: nil)
+            performSegue(withIdentifier: "goToAuth", sender: self)
+            
+        }
+        catch {
+            print("error login out")
+        }
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

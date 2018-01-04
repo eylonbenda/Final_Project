@@ -41,6 +41,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser != nil {
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            
+            
+        }
+    }
     
     
 

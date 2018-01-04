@@ -11,10 +11,14 @@ import Foundation
 
 class User {
     
-    var name : String?
-    var email : String?
+//    var userName : String?
+//    var fullName : String?
+//    var email : String?
+//    var age : Int?
+//    var hight : Float?
+//
     
-    
+ 
     
     
     

@@ -40,8 +40,8 @@ class LoginViewController: UIViewController {
             } else {
                 
                 print("succesful login!")
-                self.performSegue(withIdentifier: "goToMainViewFromLogin", sender: self)
-                
+               
+               self.dismiss(animated: true, completion: nil)
             }
             	
         }
