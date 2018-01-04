@@ -17,6 +17,8 @@
 		843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6D1FFCDC68001D1B8C /* User.swift */; };
 		843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */; };
 		84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */; };
+		84C03E151FFE56BB00DB9569 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */; };
+		84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C03E161FFE7AE300DB9569 /* Plan.swift */; };
 		84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55B51FEFF07C00588A61 /* AppDelegate.swift */; };
 		84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55B71FEFF07C00588A61 /* ViewController.swift */; };
 		84EE55BB1FEFF07C00588A61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE55B91FEFF07C00588A61 /* Main.storyboard */; };
@@ -68,6 +70,8 @@
 		843F9F6D1FFCDC68001D1B8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowVCTableViewController.swift; sourceTree = "<group>"; };
+		84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		84C03E161FFE7AE300DB9569 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		84EE55B21FEFF07C00588A61 /* Final_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Final_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE55B51FEFF07C00588A61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EE55B71FEFF07C00588A61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */,
 				843F9F6D1FFCDC68001D1B8C /* User.swift */,
 				843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */,
+				84C03E161FFE7AE300DB9569 /* Plan.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +168,8 @@
 				84FB3B061FFE3678009C363B /* ProfileViewController.swift */,
 				84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */,
 				84FB3B0A1FFE46C8009C363B /* FeedTable.swift */,
+				84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */,
+				84EE55B91FEFF07C00588A61 /* Main.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,7 +209,6 @@
 				8400AB401FF547A300969441 /* View */,
 				8400AB3F1FF5479D00969441 /* Controller */,
 				8400AB3E1FF5479400969441 /* Model */,
-				84EE55B91FEFF07C00588A61 /* Main.storyboard */,
 				84EE55BF1FEFF07C00588A61 /* Assets.xcassets */,
 				84EE55C11FEFF07C00588A61 /* LaunchScreen.storyboard */,
 				84EE55C41FEFF07C00588A61 /* Info.plist */,
@@ -547,10 +553,12 @@
 			files = (
 				843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */,
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
+				84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */,
 				84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */,
 				84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */,
 				84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */,
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
+				84C03E151FFE56BB00DB9569 /* ExerciseViewController.swift in Sources */,
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
 				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,

@@ -11,11 +11,34 @@ import Foundation
 
 class User {
     
-    var name : String?
+    var userName : String?
+    var fullName :String?
     var email : String?
+    var age: Int?
+    var hight : Float?
+    var wight : Float?
+    var myPlans = [Plan]()
     
     
     
+    init(email: String){
+        self.email=email
+    }
+
+    //convert execrcise obj to json obj
+    func userToJson() -> [String:Any] {
+        
+        var jsonObj = [String:Any]()
+        jsonObj["userName"] = userName
+        jsonObj["fullName"] = fullName
+        jsonObj["email"] = email
+        jsonObj["hight"] = hight
+        jsonObj["wight"] = wight
+        
+        //jsonObj["myPlans"] = myPlan.tojson
+        return jsonObj
+        
+    }
     
     
 }

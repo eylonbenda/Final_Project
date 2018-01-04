@@ -15,13 +15,15 @@ class Exercise {
     var name : String = ""
     var urlImage : String = ""
     var urlVideo : String = ""
+    var execDescription : String = ""
     
     
-     init(name : String , urlImage : String , urlVideo : String) {
+    init(name : String , urlImage : String , urlVideo : String , execDescription : String ) {
         
         self.name = name
         self.urlImage = urlImage
         self.urlVideo = urlVideo
+        self.execDescription = execDescription
         
     }
     
@@ -31,6 +33,7 @@ class Exercise {
         name = fromJson["name"] as! String
         urlVideo = fromJson["urlVideo"] as! String
         urlImage = fromJson["urlImage"] as! String
+        execDescription = fromJson["execDescription"] as! String
         
     }
     
@@ -42,6 +45,7 @@ class Exercise {
         jsonObj["name"] = name
         jsonObj["urlImage"] = urlImage
         jsonObj["urlVideo"] = urlVideo
+        jsonObj["execDescription"] = execDescription
         return jsonObj
         
     }

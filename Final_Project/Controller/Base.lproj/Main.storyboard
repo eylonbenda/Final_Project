@@ -293,11 +293,62 @@
                     </tableView>
                     <connections>
                         <outlet property="exercisesTable" destination="Q9I-zU-IdR" id="oeW-sU-rhK"/>
+                        <segue destination="xfx-gF-jXu" kind="show" identifier="showExercise" id="7YE-Qh-MTB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0a-T5-18G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4361" y="-1169"/>
+            <point key="canvasLocation" x="4463" y="-1170"/>
+        </scene>
+        <!--Exercise View Controller-->
+        <scene sceneID="YjK-eZ-jo1">
+            <objects>
+                <viewController id="xfx-gF-jXu" customClass="ExerciseViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gYm-F4-lbc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKg-mj-hyW">
+                                <rect key="frame" x="14" y="189" width="348" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVg-L9-IIO">
+                                <rect key="frame" x="0.0" y="64" width="376" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ex name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfn-E7-gCj">
+                                        <rect key="frame" x="152" y="4" width="184" height="58"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.24520648270845413" green="0.75030022197299528" blue="0.98762112855911255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.24520648270000001" green="0.75030022200000002" blue="0.98762112859999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qn0-0N-wUw">
+                                <rect key="frame" x="16" y="436" width="343" height="177"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="psO-oh-7Mf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VyU-Ij-JTy"/>
+                    <connections>
+                        <outlet property="exDesc" destination="qn0-0N-wUw" id="APV-Hh-v5x"/>
+                        <outlet property="execriseName" destination="yfn-E7-gCj" id="41i-Vy-FcL"/>
+                        <outlet property="viewYouTube" destination="OKg-mj-hyW" id="dVI-Vt-3zV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyW-PL-kPj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5228" y="-1171.6641679160421"/>
         </scene>
         <!--Workouts-->
         <scene sceneID="BmB-cv-vGa">
