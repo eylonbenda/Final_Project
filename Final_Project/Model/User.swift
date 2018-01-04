@@ -5,25 +5,25 @@
 //  Created by admin on 03/01/2018.
 //  Copyright © 2018 admin. All rights reserved.
 //
-
 import Foundation
 
 
 class User {
     
-//    var userName : String?
-//    var fullName : String?
-//    var email : String?
-//    var age : Int?
-//    var hight : Float?
-//
+    var userName : String?
+    var fullName :String?
+    var email : String?
+    var age: Int?
+    var hight : Float?
+    var wight : Float?
+    var myPlans = [Plan]()
     
- 
+    
     
     init(email: String){
         self.email=email
     }
-
+    
     //convert execrcise obj to json obj
     func userToJson() -> [String:Any] {
         
