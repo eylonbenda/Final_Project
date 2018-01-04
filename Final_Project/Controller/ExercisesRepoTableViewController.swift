@@ -10,11 +10,10 @@ import UIKit
 
 class ExercisesRepoTableViewController: UITableViewController {
     
-    
-    
     @IBOutlet var exercisesTable: UITableView!
+    var exercise : Exercise?
     
-    
+    var row : Int = 0
     var muscleGroupExercises = MuscleGroup()
     
     override func viewDidLoad() {
@@ -46,16 +45,19 @@ class ExercisesRepoTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return muscleGroupExercises.exercises.count
     }
+    
+    
+  
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
         
-        let exercise = muscleGroupExercises.exercises[indexPath.row]
+         exercise = muscleGroupExercises.exercises[indexPath.row]
         
         if muscleGroupExercises.name == "Chest" {
          
-           let url = NSURL(string: exercise.urlImage)
+            let url = NSURL(string: (exercise?.urlImage)!)
             
             URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
                 
@@ -65,7 +67,7 @@ class ExercisesRepoTableViewController: UITableViewController {
                 
                 DispatchQueue.main.async(execute: {
                     cell.exerciseImage.image = UIImage(data: data!)
-                    cell.exerciseDescription.text = exercise.name
+                    cell.exerciseDescription.text = self.exercise?.name
                 })
                 
             }).resume()
@@ -88,6 +90,31 @@ class ExercisesRepoTableViewController: UITableViewController {
         
         exercisesTable.estimatedRowHeight = 120.0
         exercisesTable.rowHeight =  UITableViewAutomaticDimension
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        row = indexPath.row
+        performSegue(withIdentifier: "showExercise", sender: self)
+        
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showExercise" {
+            
+            let des =  segue.destination as! ExerciseViewController
+            des.exercise = exercise
+            
+            
+            
+            
+        }
+        
+        
         
     }
     

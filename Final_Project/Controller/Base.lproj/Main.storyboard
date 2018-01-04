@@ -293,6 +293,7 @@
                     </tableView>
                     <connections>
                         <outlet property="exercisesTable" destination="Q9I-zU-IdR" id="oeW-sU-rhK"/>
+                        <segue destination="xfx-gF-jXu" kind="show" identifier="showExercise" id="7YE-Qh-MTB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0a-T5-18G" userLabel="First Responder" sceneMemberID="firstResponder"/>
