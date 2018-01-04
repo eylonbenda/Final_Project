@@ -16,6 +16,7 @@ class User {
     var age: Int?
     var hight : Float?
     var wight : Float?
+    var niv : String?
     var myPlans = [Plan]()
     
     
