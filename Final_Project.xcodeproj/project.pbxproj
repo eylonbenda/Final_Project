@@ -169,7 +169,6 @@
 				84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */,
 				84FB3B0A1FFE46C8009C363B /* FeedTable.swift */,
 				84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */,
-				84EE55B91FEFF07C00588A61 /* Main.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +176,7 @@
 		8400AB401FF547A300969441 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84EE55B91FEFF07C00588A61 /* Main.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
