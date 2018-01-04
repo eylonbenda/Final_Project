@@ -16,7 +16,6 @@ class User {
     var age: Int?
     var hight : Float?
     var wight : Float?
-    var niv : String?
     var myPlans = [Plan]()
     
     
@@ -35,9 +34,19 @@ class User {
         jsonObj["hight"] = hight
         jsonObj["wight"] = wight
         
-        //jsonObj["myPlans"] = myPlan.tojson
+        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
+        print("check")
         return jsonObj
         
+    }
+    
+    func myPlanToJson(myPlans:[Plan])->[String:Any]
+    {
+        var map=[String:Any]()
+        for  plan in myPlans{
+            map = plan.planToJson()
+        }
+        return map
     }
     
     

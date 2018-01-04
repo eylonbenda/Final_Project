@@ -12,8 +12,9 @@ class Plan{
     var planName: String?
     var exercises = [Exercise]()
     
-    init(planName:String){
-        
+    init(planName:String , exercises : [Exercise]){
+        self.planName = planName
+        self.exercises = exercises
     }
     
     func addExerciseToMyPlanList(execercise:Exercise){
@@ -24,12 +25,20 @@ class Plan{
         
         var jsonObj = [String:Any]()
         jsonObj["planName"] = planName
-        //jsonObj["myPlans"] = myPlan.tojson
         
+        jsonObj["exercise"] = manyToJason(exercises: exercises)
+        print(jsonObj)
         return jsonObj
         
     }
     
-    
+    func manyToJason(exercises:[Exercise])->[String:Any]
+    {
+        var map=[String:Any]()
+        for  exec in exercises{
+            map=exec.toJson()
+        }
+        return map
+    }
     
 }

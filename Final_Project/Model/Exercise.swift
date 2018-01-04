@@ -46,12 +46,10 @@ class Exercise {
         jsonObj["urlImage"] = urlImage
         jsonObj["urlVideo"] = urlVideo
         jsonObj["execDescription"] = execDescription
+        
         return jsonObj
         
     }
-    
-    
-
     
     
     
