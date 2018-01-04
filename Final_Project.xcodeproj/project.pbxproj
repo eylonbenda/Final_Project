@@ -26,6 +26,9 @@
 		84EE55CE1FEFF07C00588A61 /* Final_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55CD1FEFF07C00588A61 /* Final_ProjectTests.swift */; };
 		84EE55D91FEFF07C00588A61 /* Final_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */; };
 		84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */; };
+		84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B061FFE3678009C363B /* ProfileViewController.swift */; };
+		84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */; };
+		84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B0A1FFE46C8009C363B /* FeedTable.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
 		F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */; };
 		F19D11DA1FF15285003AE817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19D11D91FF15182003AE817 /* GoogleService-Info.plist */; };
@@ -80,6 +83,9 @@
 		84EE55D81FEFF07C00588A61 /* Final_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Final_ProjectUITests.swift; sourceTree = "<group>"; };
 		84EE55DA1FEFF07C00588A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F84CD71FF986EC000A0ACF /* ExerciseModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModelFirebase.swift; sourceTree = "<group>"; };
+		84FB3B061FFE3678009C363B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
+		84FB3B0A1FFE46C8009C363B /* FeedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTable.swift; sourceTree = "<group>"; };
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +160,9 @@
 				84010ED61FF55899008A4D59 /* WorkoutsVC.swift */,
 				F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */,
 				F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */,
+				84FB3B061FFE3678009C363B /* ProfileViewController.swift */,
+				84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */,
+				84FB3B0A1FFE46C8009C363B /* FeedTable.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -543,11 +552,14 @@
 				84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */,
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
+				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
 				843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */,
+				84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,
 				84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
+				84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,
 				84010ED71FF55899008A4D59 /* WorkoutsVC.swift in Sources */,
