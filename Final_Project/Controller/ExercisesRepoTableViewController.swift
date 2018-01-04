@@ -54,8 +54,7 @@ class ExercisesRepoTableViewController: UITableViewController {
         let exercise = muscleGroupExercises.exercises[indexPath.row]
         
         if muscleGroupExercises.name == "Chest" {
-         // load from firebase all chest exercises
-            
+         
            let url = NSURL(string: exercise.urlImage)
             
             URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, response, error) in
@@ -70,6 +69,8 @@ class ExercisesRepoTableViewController: UITableViewController {
                 })
                 
             }).resume()
+            
+           
             
         } else if muscleGroupExercises.name == "ABS&Core" {
             
