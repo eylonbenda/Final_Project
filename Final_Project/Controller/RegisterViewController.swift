@@ -12,10 +12,16 @@ import Firebase
 class RegisterViewController: UIViewController {
     
     
+    @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var fName: UITextField!
-    @IBOutlet var lName: UIView!
+    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var hight: UITextField!
+    @IBOutlet weak var wight: UITextField!
+    
+    
+    var newUser : User?
+    var modelUser : UserModelFirebase?
     
     
   
@@ -23,6 +29,8 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        modelUser = UserModelFirebase()
 
         // Do any additional setup after loading the view.
     }
@@ -35,23 +43,22 @@ class RegisterViewController: UIViewController {
     @IBAction func createUser(_ sender: Any) {
         
         
+        newUser = User(email: email.text!, userName: userName.text!, fullName: fullName.text!, hight: hight.text!, wight: wight.text!)
+        
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             
             if error != nil {
                 
                 print(error!)
             } else {
-                //TODO: add to user database
                 
+                self.modelUser?.addNewUser(user: self.newUser!)
                 print("Registration sucsseful!")
-                self.performSegue(withIdentifier: "goToMainView", sender: self)
+                self.dismiss(animated: true, completion: nil)
             }
             
             
         }
-        
-        
-        
         
         
     }

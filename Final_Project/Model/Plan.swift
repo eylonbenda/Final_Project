@@ -26,17 +26,18 @@ class Plan{
         var jsonObj = [String:Any]()
         jsonObj["planName"] = planName
         
-        jsonObj["exercise"] = manyToJason(exercises: exercises)
+        jsonObj["exercises"] = exercisesToJason(exercises: exercises)
         print(jsonObj)
         return jsonObj
         
     }
     
-    func manyToJason(exercises:[Exercise])->[String:Any]
+    func exercisesToJason(exercises:[Exercise])->[String:Any]
     {
         var map=[String:Any]()
         for  exec in exercises{
-            map=exec.toJson()
+//            map=exec.toJson()
+            map[exec.name] = exec.toJson()
         }
         return map
     }

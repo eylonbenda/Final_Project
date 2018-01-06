@@ -13,15 +13,19 @@ class User {
     var userName : String?
     var fullName :String?
     var email : String?
-    var age: Int?
-    var hight : Float?
-    var wight : Float?
+    var age: String?
+    var hight : String?
+    var wight : String?
     var myPlans = [Plan]()
     
     
     
-    init(email: String){
+    init(email: String , userName : String , fullName : String , hight : String , wight : String){
         self.email=email
+        self.userName = userName
+        self.fullName = fullName
+        self.hight = hight
+        self.wight = wight
     }
     
     //convert execrcise obj to json obj
@@ -34,9 +38,17 @@ class User {
         jsonObj["hight"] = hight
         jsonObj["wight"] = wight
         
-        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
+//        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
         print("check")
         return jsonObj
+        
+    }
+    
+    func convertMyPlanToJson() -> [String:Any]{
+        
+        var json = [String:Any]()
+        json["myPlans"] = myPlanToJson(myPlans: myPlans)
+        return json
         
     }
     
@@ -44,7 +56,7 @@ class User {
     {
         var map=[String:Any]()
         for  plan in myPlans{
-            map = plan.planToJson()
+            map[plan.planName!] = plan.planToJson()
         }
         return map
     }

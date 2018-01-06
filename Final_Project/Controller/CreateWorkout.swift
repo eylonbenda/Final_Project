@@ -109,6 +109,7 @@ class CreateWorkout: UITableViewController {
         if segue.identifier == "showExercises"  {
 
             let des = segue.destination as! ExercisesRepoTableViewController
+            des.loadViewIfNeeded()
 
             if row == 0 {
                 //load from firebase chest-exercises
@@ -116,9 +117,6 @@ class CreateWorkout: UITableViewController {
                     
                     if let exes = exercises {
                         
-                        for exer in exes{
-                            print(exer.name)
-                        }
                         self.muscleGroups[0].exercises = exes
                         
                     }

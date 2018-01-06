@@ -21,6 +21,7 @@ class ExercisesRepoTableViewController: UITableViewController {
         
         configureTableView()
         exercisesTable.reloadData()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

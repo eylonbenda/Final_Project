@@ -17,23 +17,24 @@ class FeedTable: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         var model = UserModelFirebase()
-        
-        var exes  = [Exercise]()
-        var exer = Exercise(name: "pull-up", urlImage: "fdjhgfd.com", urlVideo: "blbl.com", execDescription: "llllll")
-        exes.append(exer)
-        var myplan = Plan(planName: "myplan", exercises: exes)
-    
-        
-        var user = User(email : "lala")
-        user.fullName = "eylon"
-        user.userName = "eylon"
-        user.hight = 12.2
-        user.age = 12
-        user.wight = 60.0
-        
-        
-        model.addNewUser(user: user)
+//         var model = UserModelFirebase()
+//
+//        var exes  = [Exercise]()
+//        var exer = Exercise(name: "pull-up", urlImage: "fdjhgfd.com", urlVideo: "blbl.com", execDescription: "llllll")
+//        exes.append(exer)
+//        var myplan = Plan(planName: "myplan", exercises: exes)
+//
+//
+//        var user = User(email : "lala")
+//        user.fullName = "eylon"
+//        user.userName = "eylon"
+//        user.hight = 12.2
+//        user.age = 12
+//        user.wight = 60.0
+//        user.myPlans.append(myplan)
+//
+//
+//        model.addNewUser(user: user)
         
         
 
@@ -57,7 +58,6 @@ class FeedTable: UITableViewController {
     }
     @IBAction func LogOutPress(_ sender: Any) {
         do {
-            print("rrrrr")
             try Auth.auth().signOut()
             print("sighned out!")
             //self.dismiss(animated: true, completion: nil)

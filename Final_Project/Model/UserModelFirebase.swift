@@ -23,18 +23,20 @@ class UserModelFirebase : ModelFireBase {
     
     func addNewUser(user : User){
         
-        let myRef = ref?.child("Users").child(user.email!)
+        let myRef = ref?.child("Users").child(user.fullName!)
         myRef?.setValue(user.userToJson())
-        
-        
         
         
     }
     
     
+    func addTrainPlanToUser(user : User){
+        
+        let myRef = ref?.child("Users").child(user.fullName!).child("myPlans")
+        myRef?.setValue(user.convertMyPlanToJson())
+    }
     
     
-    
-    
+
     
 }

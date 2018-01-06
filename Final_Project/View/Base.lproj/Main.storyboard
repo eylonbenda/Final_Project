@@ -78,21 +78,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-Fh-cUx">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Full Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3FJ-Fh-cUx">
                                 <rect key="frame" x="37" y="256" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Last Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="he0-AH-TIE">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" highlighted="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hight" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="he0-AH-TIE">
                                 <rect key="frame" x="37" y="309" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-sC-JHy">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Wight" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0LW-sC-JHy">
                                 <rect key="frame" x="37" y="367" width="300" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -107,6 +107,13 @@
                                     <action selector="createUser:" destination="92o-Y6-tYz" eventType="touchUpInside" id="d0R-up-5WV"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="User Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="thn-eM-00q">
+                                <rect key="frame" x="37" y="97" width="300" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="YFY-S7-7dg"/>
@@ -114,9 +121,11 @@
                     <navigationItem key="navigationItem" title="Register" id="C7l-jT-Mql"/>
                     <connections>
                         <outlet property="email" destination="172-z4-18p" id="HBy-mq-nuw"/>
-                        <outlet property="fName" destination="3FJ-Fh-cUx" id="8Mh-BQ-1Bw"/>
-                        <outlet property="lName" destination="fQ9-Uv-xAI" id="475-m2-nHn"/>
+                        <outlet property="fullName" destination="3FJ-Fh-cUx" id="EwI-2C-lTH"/>
+                        <outlet property="hight" destination="he0-AH-TIE" id="9uj-Hh-8or"/>
                         <outlet property="password" destination="Peu-1g-zmQ" id="fJc-TL-civ"/>
+                        <outlet property="userName" destination="thn-eM-00q" id="WfQ-dA-U4p"/>
+                        <outlet property="wight" destination="0LW-sC-JHy" id="xTI-ue-2Rh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLX-NV-QfD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ph-h4-7aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="1015"/>
+            <point key="canvasLocation" x="1934" y="1029"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wY7-Ts-Skt">
@@ -427,7 +436,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnj-mw-hfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2516" y="259.52023988005999"/>
+            <point key="canvasLocation" x="1934" y="247"/>
         </scene>
         <!--My Workouts-->
         <scene sceneID="Wla-6B-Zar">
@@ -484,7 +493,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FL6-gI-lXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-470"/>
+            <point key="canvasLocation" x="1934" y="-486"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aKs-iP-GXx">
