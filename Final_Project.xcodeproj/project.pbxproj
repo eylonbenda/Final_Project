@@ -16,7 +16,12 @@
 		84010ED71FF55899008A4D59 /* WorkoutsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84010ED61FF55899008A4D59 /* WorkoutsVC.swift */; };
 		843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6D1FFCDC68001D1B8C /* User.swift */; };
 		843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */; };
+		845F4CD22004B0DB00FF6DBA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 845F4CD12004B0DB00FF6DBA /* libsqlite3.0.tbd */; };
+		845F4CD52004B15800FF6DBA /* test.m in Sources */ = {isa = PBXBuildFile; fileRef = 845F4CD42004B15800FF6DBA /* test.m */; };
+		845F4CD72004B84300FF6DBA /* ModelSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F4CD62004B84300FF6DBA /* ModelSQLite.swift */; };
+		845F4CD92004D3E500FF6DBA /* ExerciseModelSQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845F4CD82004D3E500FF6DBA /* ExerciseModelSQLite.swift */; };
 		84A55AF21FF3A1380005368D /* MainWindowVCTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */; };
+		84B108CC200621F700FC7C80 /* LocalFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B108CB200621F700FC7C80 /* LocalFileStore.swift */; };
 		84C03E151FFE56BB00DB9569 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */; };
 		84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C03E161FFE7AE300DB9569 /* Plan.swift */; };
 		84C7DDAC1FFE9A300033EBCC /* UserModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7DDAB1FFE9A300033EBCC /* UserModelFirebase.swift */; };
@@ -70,7 +75,13 @@
 		84010ED61FF55899008A4D59 /* WorkoutsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsVC.swift; sourceTree = "<group>"; };
 		843F9F6D1FFCDC68001D1B8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		845F4CD12004B0DB00FF6DBA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		845F4CD32004B15800FF6DBA /* Final_Project-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Final_Project-Bridging-Header.h"; sourceTree = "<group>"; };
+		845F4CD42004B15800FF6DBA /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
+		845F4CD62004B84300FF6DBA /* ModelSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQLite.swift; sourceTree = "<group>"; };
+		845F4CD82004D3E500FF6DBA /* ExerciseModelSQLite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModelSQLite.swift; sourceTree = "<group>"; };
 		84A55AF11FF3A1380005368D /* MainWindowVCTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowVCTableViewController.swift; sourceTree = "<group>"; };
+		84B108CB200621F700FC7C80 /* LocalFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileStore.swift; sourceTree = "<group>"; };
 		84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
 		84C03E161FFE7AE300DB9569 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		84C7DDAB1FFE9A300033EBCC /* UserModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelFirebase.swift; sourceTree = "<group>"; };
@@ -108,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				845F4CD22004B0DB00FF6DBA /* libsqlite3.0.tbd in Frameworks */,
 				32C25488AFB473CFC0A010DF /* Pods_Final_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +146,7 @@
 		209CEA0544F248019765ECEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				845F4CD12004B0DB00FF6DBA /* libsqlite3.0.tbd */,
 				ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */,
 				32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */,
 				3DDC29C8EE71A0AE9E5917AA /* Pods_Final_ProjectUITests.framework */,
@@ -151,6 +164,11 @@
 				843F9F6F1FFCDDCA001D1B8C /* ModelFirebase.swift */,
 				84C03E161FFE7AE300DB9569 /* Plan.swift */,
 				84C7DDAB1FFE9A300033EBCC /* UserModelFirebase.swift */,
+				845F4CD42004B15800FF6DBA /* test.m */,
+				845F4CD32004B15800FF6DBA /* Final_Project-Bridging-Header.h */,
+				845F4CD62004B84300FF6DBA /* ModelSQLite.swift */,
+				845F4CD82004D3E500FF6DBA /* ExerciseModelSQLite.swift */,
+				84B108CB200621F700FC7C80 /* LocalFileStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -329,6 +347,7 @@
 				TargetAttributes = {
 					84EE55B11FEFF07C00588A61 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 					84EE55C81FEFF07C00588A61 = {
@@ -557,6 +576,7 @@
 				843F9F701FFCDDCA001D1B8C /* ModelFirebase.swift in Sources */,
 				84C7DDAC1FFE9A300033EBCC /* UserModelFirebase.swift in Sources */,
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
+				84B108CC200621F700FC7C80 /* LocalFileStore.swift in Sources */,
 				84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */,
 				84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */,
 				84EE55B61FEFF07C00588A61 /* AppDelegate.swift in Sources */,
@@ -566,16 +586,19 @@
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
 				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
+				845F4CD92004D3E500FF6DBA /* ExerciseModelSQLite.swift in Sources */,
 				843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */,
 				84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,
 				84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
+				845F4CD52004B15800FF6DBA /* test.m in Sources */,
 				84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,
 				84010ED71FF55899008A4D59 /* WorkoutsVC.swift in Sources */,
 				8400AB421FF5483100969441 /* Exercise.swift in Sources */,
+				845F4CD72004B84300FF6DBA /* ModelSQLite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,11 +765,14 @@
 			baseConfigurationReference = 0BF5AB6C3382DD73AA2A97E6 /* Pods-Final_Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Final_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eylon.Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Final_Project/Model/Final_Project-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -757,11 +783,13 @@
 			baseConfigurationReference = BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Final_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eylon.Final-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Final_Project/Model/Final_Project-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

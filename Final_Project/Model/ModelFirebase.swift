@@ -12,10 +12,13 @@ import Firebase
 class ModelFireBase {
     
     let ref : DatabaseReference?
+    let storageRef : StorageReference?
     
     init() {
         
         ref = Database.database().reference()
+        storageRef = Storage.storage().reference()
+        
     }
     
     

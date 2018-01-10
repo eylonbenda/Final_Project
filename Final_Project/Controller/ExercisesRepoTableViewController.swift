@@ -11,8 +11,8 @@ import UIKit
 class ExercisesRepoTableViewController: UITableViewController {
     
     @IBOutlet var exercisesTable: UITableView!
-    var exercise : Exercise?
     
+    var exercise : Exercise?
     var row : Int = 0
     var muscleGroupExercises = MuscleGroup()
     
@@ -21,6 +21,7 @@ class ExercisesRepoTableViewController: UITableViewController {
         
         configureTableView()
         exercisesTable.reloadData()
+       
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -52,8 +53,8 @@ class ExercisesRepoTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "exercise_cell", for: indexPath) as! ExercisesRepoCellTableViewCell
          exercise = muscleGroupExercises.exercises[indexPath.row]
         
         if muscleGroupExercises.name == "Chest" {

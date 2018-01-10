@@ -10,8 +10,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
+    var userModel = UserModelFirebase()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
 
         // Do any additional setup after loading the view.
     }

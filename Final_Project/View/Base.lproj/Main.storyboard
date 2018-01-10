@@ -187,14 +187,31 @@
                     <view key="view" contentMode="scaleToFill" id="NKG-1B-y0t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MH4-U5-rfA">
+                                <rect key="frame" x="67" y="70" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmW-jT-na2">
+                                <rect key="frame" x="166" y="233" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kca-jL-ySS"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="eNY-MI-ip0"/>
+                    <connections>
+                        <outlet property="profileImage" destination="MH4-U5-rfA" id="IR7-x8-DcR"/>
+                        <outlet property="userName" destination="hmW-jT-na2" id="Ij4-16-Nr1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ph-h4-7aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="1029"/>
+            <point key="canvasLocation" x="1934" y="1055"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wY7-Ts-Skt">
@@ -405,7 +422,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
-                                <navigationItem title="Title" id="7WR-fV-h2c">
+                                <navigationItem title="Feed" id="7WR-fV-h2c">
                                     <barButtonItem key="leftBarButtonItem" title="Log out" id="G5H-8C-BGD">
                                         <connections>
                                             <action selector="LogOutPress:" destination="q0N-CH-e6g" id="vX7-bt-e6I"/>
@@ -436,7 +453,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnj-mw-hfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="247"/>
+            <point key="canvasLocation" x="1934" y="260"/>
         </scene>
         <!--My Workouts-->
         <scene sceneID="Wla-6B-Zar">

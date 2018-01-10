@@ -16,6 +16,7 @@ class User {
     var age: String?
     var hight : String?
     var wight : String?
+    var urlImage : String?
     var myPlans = [Plan]()
     
     
@@ -26,6 +27,22 @@ class User {
         self.fullName = fullName
         self.hight = hight
         self.wight = wight
+    }
+    
+    
+    init(fromJson : [String:Any]) {
+        
+        userName = fromJson["userName"] as? String
+        fullName = fromJson["fullName"] as? String
+        email = fromJson["email"] as? String
+        hight = fromJson["hight"] as? String
+        wight = fromJson["wight"] as? String
+        
+        let plans :  [Plan] = fromJson["myPlans"] as! [Plan]
+        myPlans = plans
+        
+        
+        
     }
     
     //convert execrcise obj to json obj

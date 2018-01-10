@@ -119,6 +119,7 @@ class CreateWorkout: UITableViewController {
                         
                         self.muscleGroups[0].exercises = exes
                         
+                        
                     }
                 })
                 des.muscleGroupExercises = muscleGroups[0]
