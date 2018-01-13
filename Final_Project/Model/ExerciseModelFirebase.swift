@@ -12,13 +12,14 @@ import FirebaseDatabase
 import FirebaseStorage
 
 
-class ExerciseModelFirebase : ModelFireBase {
+class ExerciseModelFirebase  {
     
-
+    let ref : DatabaseReference?
     
-    override init() {
+     init() {
         
-        super.init()
+         ref = Database.database().reference()
+        
 //        FirebaseApp.configure()
 //        ref = Database.database().reference()
 //

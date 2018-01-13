@@ -37,9 +37,16 @@ class User {
         email = fromJson["email"] as? String
         hight = fromJson["hight"] as? String
         wight = fromJson["wight"] as? String
+       
+        if fromJson["myPlans"] != nil{
+        let plans  = fromJson["myPlans"] as! [String: Any]
+        for (key, val) in plans {
+            let temp = val as! [String:Any]
+            let plan = Plan(jsonToPlan : temp)
+            myPlans.append(plan)
+            }
+        }
         
-        let plans :  [Plan] = fromJson["myPlans"] as! [Plan]
-        myPlans = plans
         
         
         

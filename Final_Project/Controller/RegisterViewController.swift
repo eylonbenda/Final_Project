@@ -42,8 +42,10 @@ class RegisterViewController: UIViewController {
     
     @IBAction func createUser(_ sender: Any) {
         
+       
         
         newUser = User(email: email.text!, userName: userName.text!, fullName: fullName.text!, hight: hight.text!, wight: wight.text!)
+        //check if exsit username like the user entered
         
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
             

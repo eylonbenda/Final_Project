@@ -11,21 +11,50 @@ import Firebase
 
 class FeedTable: UITableViewController {
     
-    
    
+    var model : UserModelFirebase?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        var sqlmodel = ModelSQLite()
-    
-        sqlmodel.addNewExercise(exercise: Exercise(name: "pull-up", urlImage: "blalv.png", urlVideo: "youtube.com", execDescription: "good"))
-        var exercises = [Exercise]()
-        exercises = sqlmodel.getAllExercises()
-        for exe in exercises{
-            print(exe.name , exe.urlImage)
-        }
+        model = UserModelFirebase()
+        
+        
+        model?.getUser(userName: "bendaa", callback: { (user) in
+            print(user?.email)
+        })
+        model?.getAllUsers(callback: { (users) in
+          
+            for userr in users!{
+                print(userr.email!)
+                }
+        })
+//        model?.getUser(email: "lala", callback: { (user) in
+//
+//            if user != nil{
+//                print(user?.email! , user?.fullName! )
+//                for plan in (user?.myPlans)!{
+//                    if plan != nil {
+//                        for exe in plan.exercises{
+//                            print(exe.name)
+//                        }
+//
+//                    }
+//                }
+//            }
+//
+//        })
+       
+        
+//        var sqlmodel = ModelSQLite()
+//
+//        sqlmodel.addNewExercise(exercise: Exercise(name: "pull-up", urlImage: "blalv.png", urlVideo: "youtube.com", execDescription: "good"))
+//        var exercises = [Exercise]()
+//        exercises = sqlmodel.getAllExercises()
+//        for exe in exercises{
+//            print(exe.name , exe.urlImage)
+//        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -17,6 +17,24 @@ class Plan{
         self.exercises = exercises
     }
     
+    init(jsonToPlan : [String : Any]) {
+        
+        
+        planName = jsonToPlan["planName"] as? String
+        let exer = jsonToPlan["exercises"] as! [String:Any]
+        for (key,val) in exer {
+            
+            let temp = val as! [String : Any]
+            let exercise = Exercise(fromJson: temp)
+            exercises.append(exercise)
+            
+        }
+        
+        
+    }
+    
+    
+    
     func addExerciseToMyPlanList(execercise:Exercise){
         exercises.append(execercise)
     }
