@@ -13,7 +13,7 @@ import UIKit
 class ModelFilesStore {
     
     
-    func saveImage(image:UIImage, name:String,callback:@escaping (String?)->Void){
+    static func saveImage(image:UIImage, name:String,callback:@escaping (String?)->Void){
         //1. save image to Firebase
         FirebaseFilesStore.saveImageToFirebase(image: image,name: name, callback: {(url) in
         if (url != nil){
@@ -25,7 +25,7 @@ class ModelFilesStore {
        })
    }
     
-    func getImage(urlStr:String, callback:@escaping (UIImage?)->Void){
+    static func getImage(urlStr:String, callback:@escaping (UIImage?)->Void){
         //1. try to get the image from local store
         let url = URL(string: urlStr)
         let localImageName = url!.lastPathComponent

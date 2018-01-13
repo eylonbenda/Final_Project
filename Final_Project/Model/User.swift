@@ -10,6 +10,7 @@ import Foundation
 
 class User {
     
+    var uid : String?
     var userName : String?
     var fullName :String?
     var email : String?
@@ -21,23 +22,26 @@ class User {
     
     
     
-    init(email: String , userName : String , fullName : String , hight : String , wight : String){
+    init(uid : String,email: String , userName : String , fullName : String , hight : String , wight : String){
         self.email=email
         self.userName = userName
         self.fullName = fullName
         self.hight = hight
         self.wight = wight
+        self.uid = uid
     }
     
     
     init(fromJson : [String:Any]) {
         
+        uid = fromJson["uid"] as? String
         userName = fromJson["userName"] as? String
         fullName = fromJson["fullName"] as? String
         email = fromJson["email"] as? String
         hight = fromJson["hight"] as? String
         wight = fromJson["wight"] as? String
-       
+        urlImage = fromJson["urlImage"] as? String
+        
         if fromJson["myPlans"] != nil{
         let plans  = fromJson["myPlans"] as! [String: Any]
         for (key, val) in plans {
@@ -56,12 +60,13 @@ class User {
     func userToJson() -> [String:Any] {
         
         var jsonObj = [String:Any]()
+        jsonObj["uid"] = uid
         jsonObj["userName"] = userName
         jsonObj["fullName"] = fullName
         jsonObj["email"] = email
         jsonObj["hight"] = hight
         jsonObj["wight"] = wight
-        
+        jsonObj["urlImage"] = urlImage
 //        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
         print("check")
         return jsonObj

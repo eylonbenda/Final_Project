@@ -42,9 +42,9 @@ class RegisterViewController: UIViewController {
     
     @IBAction func createUser(_ sender: Any) {
         
-       
+   
         
-        newUser = User(email: email.text!, userName: userName.text!, fullName: fullName.text!, hight: hight.text!, wight: wight.text!)
+        
         //check if exsit username like the user entered
         
         Auth.auth().createUser(withEmail: email.text!, password: password.text!) { (user, error) in
@@ -54,6 +54,8 @@ class RegisterViewController: UIViewController {
                 print(error!)
             } else {
                 
+                let uid = Auth.auth().currentUser?.uid
+                self.newUser = User(uid: uid! ,email: self.email.text!, userName: self.userName.text!, fullName: self.fullName.text!, hight: self.hight.text!, wight: self.wight.text!)
                 self.modelUser?.addNewUser(user: self.newUser!)
                 print("Registration sucsseful!")
                 self.dismiss(animated: true, completion: nil)

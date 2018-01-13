@@ -24,7 +24,7 @@ class UserModelFirebase  {
     
     func addNewUser(user : User){
         
-        let myRef = ref?.child("Users").child(user.userName!)
+        let myRef = ref?.child("Users").child(user.uid!)
         myRef?.setValue(user.userToJson())
         
         
@@ -33,15 +33,15 @@ class UserModelFirebase  {
     
     func addTrainPlanToUser(user : User){
         
-        let myRef = ref?.child("Users").child(user.userName!).child("myPlans")
+        let myRef = ref?.child("Users").child(user.uid!).child("myPlans")
         myRef?.setValue(user.convertMyPlanToJson())
     }
     
     
-    func getUser(userName : String , callback : @escaping (User?) -> Void){
+    func getUser(uid : String , callback : @escaping (User?) -> Void){
         
         
-         let myRef = ref?.child("Users").child(userName)
+         let myRef = ref?.child("Users").child(uid)
         myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let value = snapshot.value as? [String :  Any] {
@@ -57,7 +57,6 @@ class UserModelFirebase  {
     }
     
     func getAllUsers(callback : @escaping ([User]?)->Void){
-        
         
         let myRef = ref?.child("Users")
         myRef?.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -77,12 +76,37 @@ class UserModelFirebase  {
                 
                 callback(nil)
             }
-            
         })
+    }
+    
+    func getAllUsersAndObserve(callback : @escaping ([User]?)->Void){
+        
+        let myRef = ref?.child("Users")
+        myRef?.observe(.value, with: { (snapshot) in
+            
+            if let values = snapshot.value as? [String : [String : Any]] {
+                
+                var usersArr = [User]()
+                for userJson in values{
+                    let user = User(fromJson: userJson.value)
+                    usersArr.append(user)
+                }
+                callback(usersArr)
+            } else {
+                callback(nil)
+            }
+        })
+    }
+    
+    
+    func updateUserImage(user : User  ){
+        
+        
+        let myRef = ref?.child("Users").child(user.uid!).child("urlImage")
+        myRef?.setValue(user.urlImage)
         
         
     }
-    
    
     
     

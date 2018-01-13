@@ -20,16 +20,17 @@ class FeedTable: UITableViewController {
         
         model = UserModelFirebase()
         
+       
         
-        model?.getUser(userName: "bendaa", callback: { (user) in
-            print(user?.email)
-        })
-        model?.getAllUsers(callback: { (users) in
-          
-            for userr in users!{
-                print(userr.email!)
-                }
-        })
+//        model?.getUser(userName: "bendaa", callback: { (user) in
+//            print(user?.email)
+//        })
+//        model?.getAllUsers(callback: { (users) in
+//
+//            for userr in users!{
+//                print(userr.email!)
+//                }
+//        })
 //        model?.getUser(email: "lala", callback: { (user) in
 //
 //            if user != nil{
@@ -67,7 +68,7 @@ class FeedTable: UITableViewController {
         
         if Auth.auth().currentUser != nil {
             // User is signed in.
-            // ...
+            
         } else {
             
             performSegue(withIdentifier: "goToAuth", sender: self)

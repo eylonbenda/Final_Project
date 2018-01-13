@@ -13,7 +13,7 @@ import Firebase
 class FirebaseFilesStore {
     
     static var storageRef = Storage.storage().reference(forURL:
-        "gs://sssss-41596.appspot.com/")
+        "gs://final-project-ef5ed.appspot.com")
     
     static func saveImageToFirebase(image:UIImage, name:(String),callback:@escaping (String?)->Void){
         let filesRef = storageRef.child(name)
