@@ -29,6 +29,7 @@ class ModelFilesStore {
         //1. try to get the image from local store
         let url = URL(string: urlStr)
         let localImageName = url!.lastPathComponent
+        print(localImageName)
         if let image = LocalFileStore.getImageFromFile(name: localImageName){
             print("image was taken from local-storage")
             callback(image)

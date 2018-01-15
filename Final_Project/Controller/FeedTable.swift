@@ -12,6 +12,7 @@ import Firebase
 class FeedTable: UITableViewController {
     
    
+    @IBOutlet var feedTable: UITableView!
     var model : UserModelFirebase?
 
     override func viewDidLoad() {
@@ -19,7 +20,8 @@ class FeedTable: UITableViewController {
         
         
         model = UserModelFirebase()
-        
+        configureTableView()
+        feedTable.reloadData()
        
         
 //        model?.getUser(userName: "bendaa", callback: { (user) in
@@ -99,23 +101,34 @@ class FeedTable: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
-
-    /*
+    
+    var name : [String] = ["eylon ben david","lalal"]
+    var image = [UIImage(named: "avatar 2"),UIImage(named: "avatar 2")]
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! FeedTableViewCell
+        
+        cell.name.text = name[indexPath.row]
+//        cell.imageCell.image = image[indexPath.row]
+        
         return cell
     }
-    */
+    
+    func configureTableView(){
+        
+        feedTable.estimatedRowHeight = 140
+        feedTable.rowHeight =  UITableViewAutomaticDimension
+        
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

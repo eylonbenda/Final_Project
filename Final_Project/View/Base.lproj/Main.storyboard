@@ -222,21 +222,6 @@
             </objects>
             <point key="canvasLocation" x="1933.5999999999999" y="1054.7226386806597"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="wY7-Ts-Skt">
-            <objects>
-                <viewController id="3c7-84-ykQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tsj-Y7-QKu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="jKx-bh-4Yr"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VFe-ty-pws" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3234" y="1055"/>
-        </scene>
         <!--Create-->
         <scene sceneID="wSh-4j-VT2">
             <objects>
@@ -423,7 +408,7 @@
         <scene sceneID="WOV-MB-Ckp">
             <objects>
                 <tableViewController id="q0N-CH-e6g" customClass="FeedTable" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bwY-Km-bex">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" id="bwY-Km-bex">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -441,13 +426,38 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gm0-zz-duN">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feed_cell" rowHeight="200" id="gm0-zz-duN" customClass="FeedTableViewCell" customModule="Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gm0-zz-duN" id="X9z-qD-k2h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar 2" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ae-Qsb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="145"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="145" id="tiy-lu-6sl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-Z9-jaW">
+                                            <rect key="frame" x="8" y="145" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="QPe-ae-Qsb" secondAttribute="trailing" id="Yto-GG-kU6"/>
+                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="h6U-EV-Cpt"/>
+                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leadingMargin" id="lUz-I4-xb9"/>
+                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="top" secondItem="QPe-ae-Qsb" secondAttribute="bottom" id="nCh-2o-jt8"/>
+                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="top" secondItem="X9z-qD-k2h" secondAttribute="top" id="rbe-an-OB3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageCell" destination="QPe-ae-Qsb" id="nWc-TE-eKO"/>
+                                    <outlet property="name" destination="uEU-Z9-jaW" id="CZY-74-Ej5"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -457,12 +467,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Feed" id="LYX-3K-eav"/>
                     <connections>
+                        <outlet property="feedTable" destination="bwY-Km-bex" id="Zgm-sz-moB"/>
                         <segue destination="p11-hu-rJV" kind="show" identifier="goToAuth" id="d1d-k5-lu0"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gnj-mw-hfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="260"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="259.52023988005999"/>
         </scene>
         <!--My Workouts-->
         <scene sceneID="Wla-6B-Zar">
