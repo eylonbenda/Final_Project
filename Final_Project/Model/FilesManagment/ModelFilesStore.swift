@@ -25,7 +25,7 @@ class ModelFilesStore {
        })
    }
     
-    static func getImage(urlStr:String, callback:@escaping (UIImage?)->Void){
+    static func getImage(name: String , urlStr:String, callback:@escaping (UIImage?)->Void){
         //1. try to get the image from local store
         let url = URL(string: urlStr)
         let localImageName = url!.lastPathComponent
@@ -36,7 +36,7 @@ class ModelFilesStore {
         }else{
             print("image was taken from firebase")
             //2. get the image from Firebase
-            FirebaseFilesStore.getImageFromFirebase(url: urlStr, callback:{ (image) in
+            FirebaseFilesStore.getImageFromFirebase(url: name, callback:{ (image) in
                 if (image != nil){
                     //3. save the image localy
                    LocalFileStore.saveImageToFile(image: image!, name: localImageName)
@@ -44,8 +44,8 @@ class ModelFilesStore {
                 //4. return the image to the user
                 callback(image)
             })
-        } }
-    
-    
+        }
+        
+    }
     
 }

@@ -50,14 +50,7 @@ class FeedTable: UITableViewController {
 //        })
        
         
-//        var sqlmodel = ModelSQLite()
-//
-//        sqlmodel.addNewExercise(exercise: Exercise(name: "pull-up", urlImage: "blalv.png", urlVideo: "youtube.com", execDescription: "good"))
-//        var exercises = [Exercise]()
-//        exercises = sqlmodel.getAllExercises()
-//        for exe in exercises{
-//            print(exe.name , exe.urlImage)
-//        }
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -129,6 +122,9 @@ class FeedTable: UITableViewController {
         
     }
     
+   override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
 
     /*
     // Override to support conditional editing of the table view.

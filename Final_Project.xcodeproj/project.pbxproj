@@ -46,6 +46,9 @@
 		F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11DD1FF15575003AE817 /* LoginViewController.swift */; };
 		F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */; };
 		F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */; };
+		F1F63FAA200CF7A900EF1236 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F63FA9200CF7A900EF1236 /* Model.swift */; };
+		F1F63FAC200CFC5300EF1236 /* LastUpdateTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F63FAB200CFC5300EF1236 /* LastUpdateTable.swift */; };
+		F1F63FAE200CFDC500EF1236 /* Date+firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F63FAD200CFDC500EF1236 /* Date+firebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +120,9 @@
 		F19D11DD1FF15575003AE817 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F1E5098A1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepoTableViewController.swift; sourceTree = "<group>"; };
 		F1E5098C1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisesRepoCellTableViewCell.swift; sourceTree = "<group>"; };
+		F1F63FA9200CF7A900EF1236 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F1F63FAB200CFC5300EF1236 /* LastUpdateTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastUpdateTable.swift; sourceTree = "<group>"; };
+		F1F63FAD200CFDC500EF1236 /* Date+firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+firebase.swift"; sourceTree = "<group>"; };
 		F6388FDC00DEA71530D0333B /* Pods-Final_ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectTests/Pods-Final_ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,6 +181,9 @@
 				845F4CD32004B15800FF6DBA /* Final_Project-Bridging-Header.h */,
 				845F4CD62004B84300FF6DBA /* ModelSQLite.swift */,
 				845F4CD82004D3E500FF6DBA /* ExerciseModelSQLite.swift */,
+				F1F63FA9200CF7A900EF1236 /* Model.swift */,
+				F1F63FAB200CFC5300EF1236 /* LastUpdateTable.swift */,
+				F1F63FAD200CFDC500EF1236 /* Date+firebase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -594,6 +603,7 @@
 				847CA88F200A1ABC00DA9F74 /* ModelFilesStore.swift in Sources */,
 				84C7DDAC1FFE9A300033EBCC /* UserModelFirebase.swift in Sources */,
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
+				F1F63FAC200CFC5300EF1236 /* LastUpdateTable.swift in Sources */,
 				84B108CC200621F700FC7C80 /* LocalFileStore.swift in Sources */,
 				847CA88D200A182500DA9F74 /* FirebaseFilesStore.swift in Sources */,
 				84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */,
@@ -605,6 +615,7 @@
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
 				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
+				F1F63FAA200CF7A900EF1236 /* Model.swift in Sources */,
 				845F4CD92004D3E500FF6DBA /* ExerciseModelSQLite.swift in Sources */,
 				843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */,
 				84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */,
@@ -612,6 +623,7 @@
 				84F84CD81FF986EC000A0ACF /* ExerciseModelFirebase.swift in Sources */,
 				8400AB391FF542E900969441 /* MuscleGroupCell.swift in Sources */,
 				845F4CD52004B15800FF6DBA /* test.m in Sources */,
+				F1F63FAE200CFDC500EF1236 /* Date+firebase.swift in Sources */,
 				84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,

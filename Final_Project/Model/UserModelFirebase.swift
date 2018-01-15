@@ -101,7 +101,6 @@ class UserModelFirebase  {
     
     func updateUserImage(user : User  ){
         
-        
         let myRef = ref?.child("Users").child(user.uid!).child("urlImage")
         myRef?.setValue(user.urlImage)
         

@@ -33,6 +33,7 @@ class FirebaseFilesStore {
     
     static func getImageFromFirebase(url:String,callback:@escaping (UIImage?)->Void){
         let ref = storageRef.child(url)
+        print(ref)
         ref.getData(maxSize: 10000000) { (data, error) in
             if (error == nil && data != nil){
                 let image = UIImage(data: data!)

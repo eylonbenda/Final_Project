@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
             self.userName.text = user?.userName
             if user?.urlImage != nil {
                 
-                ModelFilesStore.getImage(urlStr: (user?.urlImage)!, callback: { (profileImage) in
+                ModelFilesStore.getImage(name:(user?.userName)!, urlStr: (user?.urlImage)!, callback: { (profileImage) in
                     self.profileImage.image = profileImage
                 })
                 
