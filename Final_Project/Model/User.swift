@@ -6,6 +6,7 @@
 //  Copyright © 2018 admin. All rights reserved.
 //
 import Foundation
+import FirebaseDatabase
 
 
 class User {
@@ -19,16 +20,18 @@ class User {
     var wight : String?
     var urlImage : String?
     var myPlans = [Plan]()
+    var lastUpdate : Date?
     
     
     
-    init(uid : String,email: String , userName : String , fullName : String , hight : String , wight : String){
+    init(uid : String,email: String , userName : String , fullName : String , hight : String , wight : String,urlImage : String?){
         self.email=email
         self.userName = userName
         self.fullName = fullName
         self.hight = hight
         self.wight = wight
         self.uid = uid
+        self.urlImage = urlImage
     }
     
     
@@ -67,6 +70,8 @@ class User {
         jsonObj["hight"] = hight
         jsonObj["wight"] = wight
         jsonObj["urlImage"] = urlImage
+        
+        jsonObj["lastUpdate"] = ServerValue.timestamp()
 //        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
         print("check")
         return jsonObj

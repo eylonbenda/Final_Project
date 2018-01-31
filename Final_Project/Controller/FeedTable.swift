@@ -13,17 +13,16 @@ class FeedTable: UITableViewController {
     
    
     @IBOutlet var feedTable: UITableView!
-    var model : UserModelFirebase?
+  
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        model = UserModelFirebase()
+      
         configureTableView()
         feedTable.reloadData()
        
-        
 //        model?.getUser(userName: "bendaa", callback: { (user) in
 //            print(user?.email)
 //        })

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class LastUpdateTable {
+class LastUpdateTable  {
     
     static let TABLE = "LAST_UPDATE"
     static let NAME = "NAME"

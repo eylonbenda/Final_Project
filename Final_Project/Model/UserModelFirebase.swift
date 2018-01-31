@@ -12,12 +12,12 @@ import Firebase
 class UserModelFirebase  {
     
      let ref : DatabaseReference?
-     var storageRef : StorageReference?
+   
     
      init() {
         
         ref = Database.database().reference()
-         storageRef = Storage.storage().reference()
+         
     }
     
     
@@ -79,13 +79,11 @@ class UserModelFirebase  {
         })
     }
     
-    func getAllUsersAndObserve(callback : @escaping ([User]?)->Void){
+    func getAllUsersAndObserve(lastUpdateDate: Date? ,callback : @escaping ([User]?)->Void){
         
-        let myRef = ref?.child("Users")
-        myRef?.observe(.value, with: { (snapshot) in
+        let handler = {(snapshot:DataSnapshot) in
             
             if let values = snapshot.value as? [String : [String : Any]] {
-                
                 var usersArr = [User]()
                 for userJson in values{
                     let user = User(fromJson: userJson.value)
@@ -95,7 +93,18 @@ class UserModelFirebase  {
             } else {
                 callback(nil)
             }
-        })
+        }
+        
+        let myRef = ref?.child("Users")
+        
+        if (lastUpdateDate != nil){
+            print("q starting at:\(lastUpdateDate!) \(lastUpdateDate!.toFirebase())")
+            let fbQuery = myRef?.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
+            fbQuery?.observe(DataEventType.value, with: handler)
+        }else{
+            ref?.observe(DataEventType.value, with: handler)
+        }
+      
     }
     
     
