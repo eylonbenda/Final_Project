@@ -47,8 +47,8 @@ extension User{
             sqlite3_bind_text(sqlite3_stmt, 2, username,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 3, fullname,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 4, email,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 5, hight,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 6, wight,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 5, wight,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 6, hight,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 7, profileImageUrl,-1,nil);
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){

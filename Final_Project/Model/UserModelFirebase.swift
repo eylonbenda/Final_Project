@@ -100,9 +100,9 @@ class UserModelFirebase  {
         if (lastUpdateDate != nil){
             print("q starting at:\(lastUpdateDate!) \(lastUpdateDate!.toFirebase())")
             let fbQuery = myRef?.queryOrdered(byChild:"lastUpdate").queryStarting(atValue:lastUpdateDate!.toFirebase())
-            fbQuery?.observe(DataEventType.value, with: handler)
+            fbQuery?.observe(.value, with: handler)
         }else{
-            ref?.observe(DataEventType.value, with: handler)
+            myRef?.observe(.value, with: handler)
         }
       
     }

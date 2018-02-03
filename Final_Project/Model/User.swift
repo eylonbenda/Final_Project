@@ -44,6 +44,7 @@ class User {
         hight = fromJson["hight"] as? String
         wight = fromJson["wight"] as? String
         urlImage = fromJson["urlImage"] as? String
+        lastUpdate = fromJson["lastUpdate"] as? Date
         
         if fromJson["myPlans"] != nil{
         let plans  = fromJson["myPlans"] as! [String: Any]

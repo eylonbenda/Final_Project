@@ -13,44 +13,27 @@ class FeedTable: UITableViewController {
     
    
     @IBOutlet var feedTable: UITableView!
-  
+    
+    var users = [User]()
 
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
         configureTableView()
-        feedTable.reloadData()
        
-//        model?.getUser(userName: "bendaa", callback: { (user) in
-//            print(user?.email)
-//        })
-//        model?.getAllUsers(callback: { (users) in
-//
-//            for userr in users!{
-//                print(userr.email!)
-//                }
-//        })
-//        model?.getUser(email: "lala", callback: { (user) in
-//
-//            if user != nil{
-//                print(user?.email! , user?.fullName! )
-//                for plan in (user?.myPlans)!{
-//                    if plan != nil {
-//                        for exe in plan.exercises{
-//                            print(exe.name)
-//                        }
-//
-//                    }
-//                }
-//            }
-//
-//        })
-       
+        ModelNotification.userList.observe { (users) in
+            
+            if let userss = users {
+                
+                self.users = userss
+                self.feedTable.reloadData()
+            }
+        }
         
-
-
+        Model.instance.getAllUsersAndObserve()
+     
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -98,17 +81,25 @@ class FeedTable: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return users.count
     }
     
-    var name : [String] = ["eylon ben david","lalal"]
-    var image = [UIImage(named: "avatar 2"),UIImage(named: "avatar 2")]
+//    var name : [String] = ["eylon ben david","lalal"]
+//    var image = [UIImage(named: "avatar 2"),UIImage(named: "avatar 2")]
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! FeedTableViewCell
         
-        cell.name.text = name[indexPath.row]
-//        cell.imageCell.image = image[indexPath.row]
+        let user = users[indexPath.row]
+        
+        if user.urlImage != nil {
+            
+            cell.name.text = user.userName
+            ModelFilesStore.getImage(name: user.userName!, urlStr: user.urlImage!, callback: { (image) in
+                cell.imageCell.image = image
+            })
+            
+        }
         
         return cell
     }

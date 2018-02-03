@@ -12,23 +12,22 @@ import Firebase
 class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var fullName: UILabel!
+    
     var image : UIImage?
  
+    
     var currentUser : User?
-    var userModel : UserModelFirebase?
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
-       userModel = UserModelFirebase()
         let uid = Auth.auth().currentUser?.uid
-        
-        userModel?.getUser(uid: uid!, callback: { (user) in
+        Model.instance.getUser(uid: uid!, callback: { (user) in
             
             self.currentUser = user
-            self.userName.text = user?.userName
+            self.fullName.text = user?.fullName
             if user?.urlImage != nil {
                 
                 ModelFilesStore.getImage(name:(user?.userName)!, urlStr: (user?.urlImage)!, callback: { (profileImage) in
@@ -81,7 +80,7 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
             //update user in firebase
             print(url!)
             self.currentUser?.urlImage = url
-            self.userModel?.updateUserImage(user: self.currentUser!)
+            Model.instance.updateUserImage(user: self.currentUser!)
         }
         
         

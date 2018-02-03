@@ -31,13 +31,16 @@ class ModelNotificationBase<T> {
 
 class ModelNotification {
     
+    static let userList = ModelNotificationBase<[User]>(name: "UserListNotification")
+    static let user = ModelNotificationBase<User>(name: "UserNotification")
+    
     
     static func removeObserver(observer:Any){
         NotificationCenter.default.removeObserver(observer)
     
+    }
+
 }
-
-
 
 
 class Model {
@@ -69,10 +72,13 @@ class Model {
         usermodelFirebase.getAllUsers(callback: callback)
     }
     
-    func getAllUsersAndObserve(callback : @escaping ([User]?)->Void){
+    func getAllUsersAndObserve(){
 
         // get last update date from SQL
         let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: "USERS")
+        if lastUpdateDate != nil{
+            print(lastUpdateDate!)
+        }
 
         // get all updated records from firebase
         usermodelFirebase.getAllUsersAndObserve(lastUpdateDate: lastUpdateDate, callback: { (users) in
@@ -81,6 +87,7 @@ class Model {
             var lastUpdate:Date?
             for user in users!{
                 user.addNewUser(database: self.modelSql?.database)
+                print(user.uid ,user.lastUpdate)
                 if lastUpdate == nil{
                     lastUpdate = user.lastUpdate
                 }else{
@@ -99,9 +106,7 @@ class Model {
             let totalList = User.getAllUsers(database: self.modelSql?.database)
             print("\(totalList)")
             
-            callback(totalList)
-
-//            ModelNotification.StudentList.post(data: totalList)
+            ModelNotification.userList.post(data: totalList)
         })
 
     }
@@ -112,5 +117,5 @@ class Model {
     }
     
     
-    }
+    
 }
