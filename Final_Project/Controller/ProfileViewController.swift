@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
@@ -70,9 +71,11 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
+        
         image = info["UIImagePickerControllerOriginalImage"] as? UIImage
         self.profileImage.image = image
         self.dismiss(animated: true, completion: nil)
+   
         
         
         //save to local and remote DB image-profile

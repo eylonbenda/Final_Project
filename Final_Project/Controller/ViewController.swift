@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -43,7 +44,9 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
+            SVProgressHUD.dismiss()
             self.dismiss(animated: true, completion: nil)
+            
         } else {
             
             
