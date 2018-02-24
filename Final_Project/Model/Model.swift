@@ -87,7 +87,7 @@ class Model {
             var lastUpdate:Date?
             for user in users!{
                 user.addNewUser(database: self.modelSql?.database)
-                print(user.uid ,user.lastUpdate)
+                print(user.uid! ,user.lastUpdate)
                 if lastUpdate == nil{
                     lastUpdate = user.lastUpdate
                 }else{
@@ -104,7 +104,7 @@ class Model {
 
             //get the complete list from local DB
             let totalList = User.getAllUsers(database: self.modelSql?.database)
-            print("\(totalList)")
+            
             
             ModelNotification.userList.post(data: totalList)
         })

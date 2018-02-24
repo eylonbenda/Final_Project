@@ -44,7 +44,11 @@ class User {
         hight = fromJson["hight"] as? String
         wight = fromJson["wight"] as? String
         urlImage = fromJson["urlImage"] as? String
-        lastUpdate = fromJson["lastUpdate"] as? Date
+        
+        if let date = fromJson["lastUpdate"] as? Double{
+         self.lastUpdate = Date.fromFirebase(date)
+        }
+        
         
         if fromJson["myPlans"] != nil{
         let plans  = fromJson["myPlans"] as! [String: Any]
@@ -74,7 +78,6 @@ class User {
         
         jsonObj["lastUpdate"] = ServerValue.timestamp()
 //        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
-        print("check")
         return jsonObj
         
     }

@@ -57,8 +57,6 @@ class RegisterViewController: UIViewController {
                 print(error!)
             } else {
                 
-                
-                
                 let uid = Auth.auth().currentUser?.uid
                 self.newUser = User(uid: uid! ,email: self.email.text!, userName: self.userName.text!, fullName: self.fullName.text!, hight: self.hight.text!, wight: self.wight.text!,urlImage : nil)
                 self.modelUser?.addNewUser(user: self.newUser!)

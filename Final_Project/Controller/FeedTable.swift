@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class FeedTable: UITableViewController {
     
@@ -53,15 +54,20 @@ class FeedTable: UITableViewController {
         }
     }
     @IBAction func LogOutPress(_ sender: Any) {
+        
+        SVProgressHUD.show()
+        
         do {
             try Auth.auth().signOut()
             print("sighned out!")
             //self.dismiss(animated: true, completion: nil)
             performSegue(withIdentifier: "goToAuth", sender: self)
+            SVProgressHUD.dismiss()
             
         }
         catch {
             print("error login out")
+            SVProgressHUD.dismiss()
         }
         
         
