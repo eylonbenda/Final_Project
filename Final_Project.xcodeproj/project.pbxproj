@@ -42,6 +42,9 @@
 		84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */; };
 		84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B0A1FFE46C8009C363B /* FeedTable.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
+		F1538FC32042E43F0056F39B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC22042E43F0056F39B /* Post.swift */; };
+		F1538FC52042E6BF0056F39B /* PostModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */; };
+		F1538FC72042FB4F0056F39B /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC62042FB4F0056F39B /* AddPostVC.swift */; };
 		F16BD812203F032400FFDBBB /* Utilits.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16BD811203F032400FFDBBB /* Utilits.swift */; };
 		F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */; };
 		F19D11DA1FF15285003AE817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F19D11D91FF15182003AE817 /* GoogleService-Info.plist */; };
@@ -118,6 +121,9 @@
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1538FC22042E43F0056F39B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelFireBase.swift; sourceTree = "<group>"; };
+		F1538FC62042FB4F0056F39B /* AddPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
 		F16BD811203F032400FFDBBB /* Utilits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilits.swift; sourceTree = "<group>"; };
 		F19D11D71FF14BCF003AE817 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		F19D11D91FF15182003AE817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -190,6 +196,8 @@
 				F1F63FAD200CFDC500EF1236 /* Date+firebase.swift */,
 				84A0A03C2021F8BB000BCAFF /* User+Sql.swift */,
 				F16BD811203F032400FFDBBB /* Utilits.swift */,
+				F1538FC22042E43F0056F39B /* Post.swift */,
+				F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				84FB3B0A1FFE46C8009C363B /* FeedTable.swift */,
 				84C03E141FFE56BB00DB9569 /* ExerciseViewController.swift */,
 				84BA8729200B752F003079A2 /* FeedTableViewCell.swift */,
+				F1538FC62042FB4F0056F39B /* AddPostVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -611,6 +620,7 @@
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
 				F1F63FAC200CFC5300EF1236 /* LastUpdateTable.swift in Sources */,
 				84B108CC200621F700FC7C80 /* LocalFileStore.swift in Sources */,
+				F1538FC72042FB4F0056F39B /* AddPostVC.swift in Sources */,
 				847CA88D200A182500DA9F74 /* FirebaseFilesStore.swift in Sources */,
 				84C03E171FFE7AE300DB9569 /* Plan.swift in Sources */,
 				84EE55B81FEFF07C00588A61 /* ViewController.swift in Sources */,
@@ -619,11 +629,13 @@
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
 				84C03E151FFE56BB00DB9569 /* ExerciseViewController.swift in Sources */,
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
+				F1538FC52042E6BF0056F39B /* PostModelFireBase.swift in Sources */,
 				840FDB1E2020C08600EDEDAC /* UserModelSQL.swift in Sources */,
 				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
 				F1E5098B1FF8F87C00E4A80C /* ExercisesRepoTableViewController.swift in Sources */,
 				F1F63FAA200CF7A900EF1236 /* Model.swift in Sources */,
 				845F4CD92004D3E500FF6DBA /* ExerciseModelSQLite.swift in Sources */,
+				F1538FC32042E43F0056F39B /* Post.swift in Sources */,
 				843F9F6E1FFCDC68001D1B8C /* User.swift in Sources */,
 				84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */,
 				F19D11D81FF14BD0003AE817 /* RegisterViewController.swift in Sources */,

@@ -87,7 +87,7 @@ class Model {
             var lastUpdate:Date?
             for user in users!{
                 user.addNewUser(database: self.modelSql?.database)
-                print(user.uid! ,user.lastUpdate)
+                print(user.uid! )
                 if lastUpdate == nil{
                     lastUpdate = user.lastUpdate
                 }else{

@@ -10,12 +10,15 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class FeedTable: UITableViewController {
+class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
    
     @IBOutlet var feedTable: UITableView!
     
     var users = [User]()
+    
+    var posts = [Post]()
+    var post : Post?
 
     
     override func viewDidLoad() {
@@ -72,6 +75,12 @@ class FeedTable: UITableViewController {
         
         
     }
+    @IBAction func uploadPost(_ sender: Any) {
+        
+        performSegue(withIdentifier: "addPostSegue" , sender: self)
+    }
+    
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
