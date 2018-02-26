@@ -42,6 +42,7 @@
 		84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */; };
 		84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B0A1FFE46C8009C363B /* FeedTable.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
+		F143DD232044577B00DE518F /* post+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143DD222044577B00DE518F /* post+sql.swift */; };
 		F1538FC32042E43F0056F39B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC22042E43F0056F39B /* Post.swift */; };
 		F1538FC52042E6BF0056F39B /* PostModelFireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */; };
 		F1538FC72042FB4F0056F39B /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC62042FB4F0056F39B /* AddPostVC.swift */; };
@@ -121,6 +122,7 @@
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F143DD222044577B00DE518F /* post+sql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post+sql.swift"; sourceTree = "<group>"; };
 		F1538FC22042E43F0056F39B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModelFireBase.swift; sourceTree = "<group>"; };
 		F1538FC62042FB4F0056F39B /* AddPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				F16BD811203F032400FFDBBB /* Utilits.swift */,
 				F1538FC22042E43F0056F39B /* Post.swift */,
 				F1538FC42042E6BF0056F39B /* PostModelFireBase.swift */,
+				F143DD222044577B00DE518F /* post+sql.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -646,6 +649,7 @@
 				F1F63FAE200CFDC500EF1236 /* Date+firebase.swift in Sources */,
 				84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */,
 				8400AB371FF53EA800969441 /* CreateWorkout.swift in Sources */,
+				F143DD232044577B00DE518F /* post+sql.swift in Sources */,
 				8400AB441FF5485600969441 /* MuscleGroup.swift in Sources */,
 				84010ED71FF55899008A4D59 /* WorkoutsVC.swift in Sources */,
 				84BA872A200B752F003079A2 /* FeedTableViewCell.swift in Sources */,

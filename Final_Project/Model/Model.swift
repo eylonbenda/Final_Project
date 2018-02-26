@@ -63,6 +63,47 @@ class Model {
     }
     
     
+    func getAllPostsAndObserve(){
+        
+        // get last update date from SQL
+        let lastUpdateDate = LastUpdateTable.getLastUpdateDate(database: modelSql?.database, table: "POSTS")
+        if lastUpdateDate != nil{
+            print(lastUpdateDate!)
+        }
+        
+        // get all updated records from firebase
+        usermodelFirebase.getAllUsersAndObserve(lastUpdateDate: lastUpdateDate, callback: { (users) in
+            //update the local db
+            print("got \(users!.count) new records from FB")
+            var lastUpdate:Date?
+            for user in users!{
+                user.addNewUser(database: self.modelSql?.database)
+                print(user.uid! )
+                if lastUpdate == nil{
+                    lastUpdate = user.lastUpdate
+                }else{
+                    if lastUpdate!.compare(user.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = user.lastUpdate
+                    }
+                }
+            }
+            
+            //upadte the last update table
+            if (lastUpdate != nil){
+                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: "USERS", lastUpdate: lastUpdate!)
+            }
+            
+            //get the complete list from local DB
+            let totalList = User.getAllUsers(database: self.modelSql?.database)
+            
+            
+            ModelNotification.userList.post(data: totalList)
+        })
+        
+    }
+    
+    
+    
     func addUser(user : User){
         
         usermodelFirebase.addNewUser(user: user)
