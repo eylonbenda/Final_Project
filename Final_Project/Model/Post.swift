@@ -14,20 +14,24 @@ class Post {
     
     var urlImage : String?
     var description : String?
-    var user : User?
+    var author : String?
     var lastUpdate : Date?
+    var postID = NSUUID().uuidString
     
     
-    init(urlImage : String , description : String) {
+    init(urlImage : String , description : String? , author : String? ) {
         
         self.urlImage = urlImage
         self.description = description
+        self.author = author
     }
     
     init(fromJson : [String : Any]) {
         
+        self.postID = fromJson["postID"] as! String
         self.urlImage = fromJson["urlImage"] as? String
         self.description = fromJson["description"] as? String
+        self.author = fromJson["author"] as? String
         if let date = fromJson["lastUpdate"] as? Double{
             self.lastUpdate = Date.fromFirebase(date)
         }
@@ -41,6 +45,8 @@ class Post {
         var postObj = [String : Any]()
         postObj["urlImage"] = self.urlImage
         postObj["description"] = self.description
+        postObj["author"] = self.author
+        postObj["postID"] = self.postID
         postObj["lastUpdate"] = ServerValue.timestamp()
         //TODO:  ADD USER VALUE
         return postObj

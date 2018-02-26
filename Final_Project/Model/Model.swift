@@ -48,11 +48,18 @@ class Model {
     
    	static let instance = Model()
     
+    private lazy var postModelFB = PostModelFireBase()
+    
     private lazy var usermodelFirebase = UserModelFirebase()
     private lazy var modelSql = ModelSQLite()
     
     private init(){
         
+    }
+    
+    func addPost(post : Post){
+        
+        postModelFB.addPost(newPost: post)
     }
     
     

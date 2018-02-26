@@ -10,14 +10,14 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate , RecievePost {
     
    
     @IBOutlet var feedTable: UITableView!
     
     var users = [User]()
     
-    var posts = [Post]()
+    var listPosts = [Post]()
     var post : Post?
 
     
@@ -117,6 +117,13 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         }
         
         return cell
+    }
+    
+   func getPost(newPost: Post) {
+    
+        listPosts.append(newPost)
+        
+        
     }
     
     func configureTableView(){

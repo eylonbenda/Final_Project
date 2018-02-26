@@ -24,7 +24,7 @@ class PostModelFireBase {
     
     func addPost(newPost : Post){
         
-        let myRef = ref?.child("Posts")
+        let myRef = ref?.child("Posts").child(newPost.postID)
         myRef?.setValue(newPost.postTojson())
         
     }
