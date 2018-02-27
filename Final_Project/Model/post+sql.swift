@@ -17,7 +17,7 @@ extension Post{
         
         var errormsg: UnsafeMutablePointer<Int8>? = nil
         
-        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS POSTS (POSTID TEXT PRIMARY KEY, URLIMAGE TEXT,DESCREPTION TEXT,AUTHOR TEXT , LASTUPDATE DOUBLE)", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS POSTS (POSTID TEXT PRIMARY KEY, URLIMAGE TEXT,DESCREPTION TEXT, AUTHOR TEXT, LASTUPDATE DOUBLE)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return false
@@ -43,9 +43,9 @@ extension Post{
             }
             
             sqlite3_bind_text(sqlite3_stmt, 1, postid,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 2, descreption,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 3, author,-1,nil);
-            sqlite3_bind_text(sqlite3_stmt, 4, urlImage,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 2, urlImage,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 3, descreption,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 4, author,-1,nil);
             
             if (lastUpdate == nil){
                 lastUpdate = Date()
@@ -54,7 +54,7 @@ extension Post{
            
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("new row at POSTS table is added succefully")
             }
         }
         
@@ -70,16 +70,18 @@ extension Post{
         if (sqlite3_prepare_v2(database,"SELECT * from POSTS;",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
-                let postID = String(cString:sqlite3_column_text(sqlite3_stmt,0) )
+                
+                let postID = String(cString:sqlite3_column_text(sqlite3_stmt,0))
+                var urlImage : String? = String(cString:sqlite3_column_text(sqlite3_stmt,1))
+                if (urlImage != nil && urlImage == ""){
+                    urlImage = nil
+                }
+                
                 let descreption = String(cString:sqlite3_column_text(sqlite3_stmt,2))
                 let author = String(cString:sqlite3_column_text(sqlite3_stmt,3))
                 let lastUpdate = Double(sqlite3_column_double(sqlite3_stmt,4))
                 
-                var urlImage : String? = String(cString:sqlite3_column_text(sqlite3_stmt,1))
                 
-                if (urlImage != nil && urlImage == ""){
-                    urlImage = nil
-                }
                 let post = Post(urlImage: urlImage!, description: descreption, author: author)
                 post.lastUpdate = Date.fromFirebase(lastUpdate)
                 posts.append(post)

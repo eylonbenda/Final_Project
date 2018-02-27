@@ -34,6 +34,11 @@ class ModelSQLite {
             return nil
         }
         
+        
+        if Post.createTable(database: database) == false {
+            return nil
+        }
+        
     }
     
 }

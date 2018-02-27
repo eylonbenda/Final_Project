@@ -70,6 +70,8 @@ class AddPostVC: UIViewController , UIImagePickerControllerDelegate , UINavigati
         
         var post : Post?
         //save  post to fb and local db
+        
+        
         ModelFilesStore.saveImage(image: image.image!, name: postDesc.text ) { (url) in
             
             if url != nil{

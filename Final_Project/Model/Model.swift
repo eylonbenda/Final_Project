@@ -33,6 +33,7 @@ class ModelNotification {
     
     static let userList = ModelNotificationBase<[User]>(name: "UserListNotification")
     static let user = ModelNotificationBase<User>(name: "UserNotification")
+    static let postList = ModelNotificationBase<[Post]>(name: "PostListNotification")
     
     
     static func removeObserver(observer:Any){
@@ -72,32 +73,31 @@ class Model {
         }
         
         // get all updated records from firebase
-        usermodelFirebase.getAllUsersAndObserve(lastUpdateDate: lastUpdateDate, callback: { (users) in
+        postModelFB.getAllPostsAndObserve(lastUpdateDate: lastUpdateDate, callback: { (posts) in
             //update the local db
-            print("got \(users!.count) new records from FB")
+            print("got \(posts!.count) new records from FB")
             var lastUpdate:Date?
-            for user in users!{
-                user.addNewUser(database: self.modelSql?.database)
-                print(user.uid! )
+            for post in posts!{
+                post.addNewPost(database: self.modelSql?.database)
                 if lastUpdate == nil{
-                    lastUpdate = user.lastUpdate
+                    lastUpdate = post.lastUpdate
                 }else{
-                    if lastUpdate!.compare(user.lastUpdate!) == ComparisonResult.orderedAscending{
-                        lastUpdate = user.lastUpdate
+                    if lastUpdate!.compare(post.lastUpdate!) == ComparisonResult.orderedAscending{
+                        lastUpdate = post.lastUpdate
                     }
                 }
             }
             
             //upadte the last update table
             if (lastUpdate != nil){
-                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: "USERS", lastUpdate: lastUpdate!)
+                LastUpdateTable.setLastUpdate(database: self.modelSql!.database, table: "POSTS", lastUpdate: lastUpdate!)
             }
             
             //get the complete list from local DB
-            let totalList = User.getAllUsers(database: self.modelSql?.database)
+            let totalList = Post.getAllPosts(database: self.modelSql?.database)
             
             
-            ModelNotification.userList.post(data: totalList)
+            ModelNotification.postList.post(data: totalList)
         })
         
     }

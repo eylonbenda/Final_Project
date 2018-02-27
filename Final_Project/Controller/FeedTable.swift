@@ -25,17 +25,29 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         super.viewDidLoad()
         
         configureTableView()
-       
-        ModelNotification.userList.observe { (users) in
+        
+        
+        ModelNotification.postList.observe { (posts) in
             
-            if let userss = users {
+            if posts != nil {
                 
-                self.users = userss
+                self.listPosts = posts!
                 self.feedTable.reloadData()
             }
         }
         
-        Model.instance.getAllUsersAndObserve()
+        Model.instance.getAllPostsAndObserve()
+       
+//        ModelNotification.userList.observe { (users) in
+//
+//            if let userss = users {
+//
+//                self.users = userss
+//                self.feedTable.reloadData()
+//            }
+//        }
+        
+//        Model.instance.getAllUsersAndObserve()
      
         
         // Uncomment the following line to preserve selection between presentations
@@ -96,21 +108,21 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return users.count
+        return listPosts.count
     }
     
-//    var name : [String] = ["eylon ben david","lalal"]
-//    var image = [UIImage(named: "avatar 2"),UIImage(named: "avatar 2")]
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! FeedTableViewCell
         
-        let user = users[indexPath.row]
+        let post = listPosts[indexPath.row]
         
-        if user.urlImage != nil {
+        if post.urlImage != nil {
             
-            cell.name.text = user.userName
-            ModelFilesStore.getImage(name: user.userName!, urlStr: user.urlImage!, callback: { (image) in
+            cell.userName.text = post.author
+            cell.postDes.text = post.description
+            ModelFilesStore.getImage(name: post.description!, urlStr: post.urlImage!, callback: { (image) in
                 cell.imageCell.image = image
             })
             

@@ -11,7 +11,8 @@ import UIKit
 class FeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var imageCell: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var postDes: UILabel!
+    @IBOutlet weak var userName: UILabel!
     
     
     override func awakeFromNib() {

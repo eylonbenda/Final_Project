@@ -42,7 +42,7 @@ class LastUpdateTable  {
             sqlite3_bind_double(sqlite3_stmt, 2, lastUpdate.toFirebase());
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("new row at LAST_UPDATE is added succefully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
