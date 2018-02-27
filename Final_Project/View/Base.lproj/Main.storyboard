@@ -431,53 +431,48 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feed_cell" rowHeight="200" id="gm0-zz-duN" customClass="FeedTableViewCell" customModule="Final_Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feed_cell" rowHeight="250" id="gm0-zz-duN" customClass="FeedTableViewCell" customModule="Final_Project" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gm0-zz-duN" id="X9z-qD-k2h">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="avatar 2" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ae-Qsb">
-                                            <rect key="frame" x="0.0" y="15" width="375" height="163"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar 2" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ae-Qsb">
+                                            <rect key="frame" x="0.0" y="20" width="375" height="145"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="145" id="tiy-lu-6sl"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNZ-V6-0mK">
-                                            <rect key="frame" x="0.0" y="-6" width="81.5" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNZ-V6-0mK">
+                                            <rect key="frame" x="0.0" y="0.0" width="81.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uEU-Z9-jaW">
-                                            <rect key="frame" x="0.0" y="178" width="88" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrn-Gv-Kms">
+                                            <rect key="frame" x="0.0" y="165" width="375" height="85"/>
+                                            <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="QPe-ae-Qsb" secondAttribute="trailing" id="0Px-qQ-QlM"/>
-                                        <constraint firstItem="FNZ-V6-0mK" firstAttribute="top" secondItem="X9z-qD-k2h" secondAttribute="top" constant="-6" id="6Da-Wy-8OH"/>
-                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="top" secondItem="QPe-ae-Qsb" secondAttribute="bottom" id="6dE-Mm-dbn"/>
-                                        <constraint firstAttribute="trailing" secondItem="QPe-ae-Qsb" secondAttribute="trailing" id="7Ja-BM-yaR"/>
-                                        <constraint firstAttribute="trailing" secondItem="QPe-ae-Qsb" secondAttribute="trailing" id="DH8-zq-0BM"/>
-                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="top" secondItem="QPe-ae-Qsb" secondAttribute="bottom" id="OxZ-Hs-POo"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="Y8H-Fb-Vxw"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="YbL-IZ-AH2"/>
-                                        <constraint firstAttribute="trailing" secondItem="uEU-Z9-jaW" secondAttribute="trailing" constant="287" id="h8Y-ZB-xem"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="ic5-Ky-m1g"/>
-                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="l56-uq-VAf"/>
-                                        <constraint firstAttribute="trailing" secondItem="FNZ-V6-0mK" secondAttribute="trailing" constant="293.5" id="mPA-yn-Iwq"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="top" secondItem="FNZ-V6-0mK" secondAttribute="bottom" id="moh-5Z-edE"/>
-                                        <constraint firstAttribute="bottom" secondItem="uEU-Z9-jaW" secondAttribute="bottom" constant="0.5" id="mro-Ue-Sl0"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="top" secondItem="FNZ-V6-0mK" secondAttribute="bottom" id="se3-HH-Mqu"/>
-                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="top" secondItem="FNZ-V6-0mK" secondAttribute="bottom" id="svL-YE-MgD"/>
-                                        <constraint firstItem="uEU-Z9-jaW" firstAttribute="top" secondItem="QPe-ae-Qsb" secondAttribute="bottom" id="u4a-RE-0Na"/>
-                                        <constraint firstItem="FNZ-V6-0mK" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="unD-RS-5U5"/>
+                                        <constraint firstAttribute="trailing" secondItem="wrn-Gv-Kms" secondAttribute="trailing" id="5ap-Cl-cw7"/>
+                                        <constraint firstItem="wrn-Gv-Kms" firstAttribute="top" secondItem="QPe-ae-Qsb" secondAttribute="bottom" id="86D-1B-Ik3"/>
+                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="CMq-vG-5PE"/>
+                                        <constraint firstItem="wrn-Gv-Kms" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="PUB-RC-2IY"/>
+                                        <constraint firstAttribute="trailing" secondItem="QPe-ae-Qsb" secondAttribute="trailing" id="Yto-GG-kU6"/>
+                                        <constraint firstItem="FNZ-V6-0mK" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="aI1-kS-rdg"/>
+                                        <constraint firstItem="FNZ-V6-0mK" firstAttribute="top" secondItem="X9z-qD-k2h" secondAttribute="top" id="gKe-RS-egp"/>
+                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="leading" secondItem="X9z-qD-k2h" secondAttribute="leading" id="h6U-EV-Cpt"/>
+                                        <constraint firstItem="QPe-ae-Qsb" firstAttribute="top" secondItem="X9z-qD-k2h" secondAttribute="top" constant="20" id="rbe-an-OB3"/>
+                                        <constraint firstAttribute="bottom" secondItem="wrn-Gv-Kms" secondAttribute="bottom" constant="-0.5" id="yAx-WC-q7r"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageCell" destination="QPe-ae-Qsb" id="nWc-TE-eKO"/>
-                                    <outlet property="postDes" destination="uEU-Z9-jaW" id="GBh-JU-cTU"/>
+                                    <outlet property="postDes" destination="wrn-Gv-Kms" id="Imd-Gu-WOp"/>
                                     <outlet property="userName" destination="FNZ-V6-0mK" id="UK7-VV-6jd"/>
                                 </connections>
                             </tableViewCell>

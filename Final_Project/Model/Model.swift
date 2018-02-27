@@ -94,15 +94,27 @@ class Model {
             }
             
             //get the complete list from local DB
-            let totalList = Post.getAllPosts(database: self.modelSql?.database)
+            var totalList = Post.getAllPosts(database: self.modelSql?.database)
+            
+            
+            
+            
+           totalList =  totalList.sorted(by:  { (post1, post2) -> Bool in
+                
+                post1.lastUpdate! > post2.lastUpdate!
+            })
+            
+            for post in totalList {
+                print(post.lastUpdate!)
+            }
             
             
             ModelNotification.postList.post(data: totalList)
         })
         
     }
-    
-    
+
+
     
     func addUser(user : User){
         
