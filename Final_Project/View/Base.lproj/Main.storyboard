@@ -220,7 +220,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ph-h4-7aL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="1055"/>
+            <point key="canvasLocation" x="1934" y="1000"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="5bD-cL-Ii9">
+            <objects>
+                <viewController title="Map" id="bCH-Q1-hNo" customClass="MapVC" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RX8-Cc-fWg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dXN-N6-fNb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="575"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3q-r1-YbJ">
+                                <rect key="frame" x="172" y="583" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addButton:" destination="bCH-Q1-hNo" eventType="touchUpInside" id="hwN-hK-CV9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="K3q-r1-YbJ" firstAttribute="top" secondItem="dXN-N6-fNb" secondAttribute="bottom" constant="8" id="JmZ-PB-kah"/>
+                            <constraint firstItem="K3q-r1-YbJ" firstAttribute="leading" secondItem="tgk-0M-6d2" secondAttribute="leading" constant="172" id="OSa-hh-h0H"/>
+                            <constraint firstItem="dXN-N6-fNb" firstAttribute="top" secondItem="RX8-Cc-fWg" secondAttribute="top" id="cYJ-Yp-IN1"/>
+                            <constraint firstItem="K3q-r1-YbJ" firstAttribute="top" secondItem="dXN-N6-fNb" secondAttribute="bottom" constant="8" id="iBO-EX-6g5"/>
+                            <constraint firstItem="tgk-0M-6d2" firstAttribute="bottom" secondItem="K3q-r1-YbJ" secondAttribute="bottom" constant="5" id="jx6-lF-f7m"/>
+                            <constraint firstItem="dXN-N6-fNb" firstAttribute="leading" secondItem="tgk-0M-6d2" secondAttribute="leading" id="mcA-SF-q7q"/>
+                            <constraint firstItem="dXN-N6-fNb" firstAttribute="trailing" secondItem="tgk-0M-6d2" secondAttribute="trailing" id="odW-Bw-fo7"/>
+                            <constraint firstItem="tgk-0M-6d2" firstAttribute="trailing" secondItem="K3q-r1-YbJ" secondAttribute="trailing" constant="173" id="ttg-QH-MFm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tgk-0M-6d2"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Q13-Zg-gGB"/>
+                    <connections>
+                        <outlet property="map" destination="dXN-N6-fNb" id="4ml-74-N98"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="otQ-9R-O36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1933.5999999999999" y="1737.481259370315"/>
         </scene>
         <!--Create-->
         <scene sceneID="wSh-4j-VT2">
@@ -398,13 +439,14 @@
                         <segue destination="DXQ-Fe-Qd4" kind="relationship" relationship="viewControllers" id="424-na-HHP"/>
                         <segue destination="jvP-z2-AnP" kind="relationship" relationship="viewControllers" id="SAL-Iy-W2f"/>
                         <segue destination="Cuw-Qx-N7D" kind="relationship" relationship="viewControllers" id="TIE-US-gvB"/>
+                        <segue destination="bCH-Q1-hNo" kind="relationship" relationship="viewControllers" id="hIz-Fi-jbv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Orr-Si-8oZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1121" y="260"/>
         </scene>
-        <!--Feed Table-->
+        <!--Feed-->
         <scene sceneID="WOV-MB-Ckp">
             <objects>
                 <tableViewController id="q0N-CH-e6g" customClass="FeedTable" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -412,27 +454,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="e3N-G0-ABG">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Feed" id="7WR-fV-h2c">
-                                    <barButtonItem key="leftBarButtonItem" title="Log out" id="G5H-8C-BGD">
-                                        <connections>
-                                            <action selector="LogOutPress:" destination="q0N-CH-e6g" id="vX7-bt-e6I"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="action" id="Tr2-d4-gtv">
-                                        <connections>
-                                            <action selector="uploadPost:" destination="q0N-CH-e6g" id="Z1x-as-94X"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="feed_cell" rowHeight="250" id="gm0-zz-duN" customClass="FeedTableViewCell" customModule="Final_Project" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="250"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gm0-zz-duN" id="X9z-qD-k2h">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
@@ -482,7 +506,18 @@
                             <outlet property="delegate" destination="q0N-CH-e6g" id="jvI-vH-tDv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="128-QX-iVg"/>
+                    <navigationItem key="navigationItem" title="Feed" id="7WR-fV-h2c">
+                        <barButtonItem key="leftBarButtonItem" title="Log out" id="G5H-8C-BGD">
+                            <connections>
+                                <action selector="LogOutPress:" destination="q0N-CH-e6g" id="vX7-bt-e6I"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Tr2-d4-gtv">
+                            <connections>
+                                <action selector="uploadPost:" destination="q0N-CH-e6g" id="Z1x-as-94X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="feedTable" destination="bwY-Km-bex" id="Zgm-sz-moB"/>
                         <segue destination="p11-hu-rJV" kind="show" identifier="goToAuth" id="d1d-k5-lu0"/>

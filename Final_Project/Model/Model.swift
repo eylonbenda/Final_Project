@@ -54,7 +54,21 @@ class Model {
     private lazy var usermodelFirebase = UserModelFirebase()
     private lazy var modelSql = ModelSQLite()
     
+    private lazy var annotationModel = AnnotaionModel()
+    
     private init(){
+        
+    }
+    
+    func addAnnotationToDB(annotation : Annotaion){
+        
+        annotationModel.addAnnotationToFB(annotation: annotation)
+        
+    }
+    
+    func getAllAnnotation(callback : @escaping ([Annotaion]?)->Void){
+        
+        annotationModel.getAllAnnotation(callback: callback)
         
     }
     
