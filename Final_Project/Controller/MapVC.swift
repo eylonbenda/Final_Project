@@ -13,13 +13,12 @@ import CoreLocation
 class MapVC: UIViewController , CLLocationManagerDelegate {
 
    
-    
-    let alert = UIAlertController(title: "Add new running location", message: "Enter description", preferredStyle: .alert)
-    
     //Map
     @IBOutlet weak var map: MKMapView!
     
     var annotations = [Annotaion]()
+    
+    var textFiled : UITextField?
 
 
     //Locations
@@ -44,10 +43,6 @@ class MapVC: UIViewController , CLLocationManagerDelegate {
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
         
-        
-        
-        
-        
     }
     
     
@@ -64,21 +59,6 @@ class MapVC: UIViewController , CLLocationManagerDelegate {
         
         manager.startUpdatingLocation()
         
-        
-
-    
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        alert.addTextField { (textField) in
-            
-            textField.text = ""
-            
-        }
-        
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
-            
-        }))
         
         Model.instance.getAllAnnotation { (annotationss) in
             
@@ -116,34 +96,35 @@ class MapVC: UIViewController , CLLocationManagerDelegate {
     
    
     @IBAction func addButton(_ sender: Any) {
-        addAnnotation()
+        showAlert()
     }
     
 
     
-    func addAnnotation(){
+    func addAnnotation(titel : String){
         
         var anno : Annotaion?
-        
-        let textField = self.alert.textFields![0]
+        //textFiled = self.alert.textFields![0]
         let annotation = MKPointAnnotation()
-        annotation.coordinate = self.myLocation
-        annotation.title = textField.text
+        annotation.coordinate = myLocation
+       // annotation.title = textFiled?.text
+        annotation.title = titel
         
-    
-        self.present(alert, animated: true, completion: nil)
-        annotation.title = textField.text
-        print(annotation.title)
         self.map.addAnnotation(annotation)
+       // self.present(alert, animated: true, completion: nil)
+        
+        
+        print(annotation.title)
         
         
         anno = Annotaion(long: annotation.coordinate.longitude, lat: annotation.coordinate.latitude, text: annotation.title!)
         Model.instance.addAnnotationToDB(annotation: anno!)
-        annotations.append(anno!)
-
+        
+        
         
     }
     
+
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -158,8 +139,41 @@ class MapVC: UIViewController , CLLocationManagerDelegate {
             
         }
         
+        
+        
+        
     }
     
+    
+    func showAlert(){
+        
+        var myTitle : String?
+        
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Describe your Loaction", message: "Enter a text", preferredStyle: .alert)
+        
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+        
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            myTitle = textField?.text
+            print("Text field: \(textField?.text)")
+           self.addAnnotation(titel: (myTitle)!)
+        }))
+        
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+        
+        
+        
+        
+        
+        
+    }
     
 
 }
