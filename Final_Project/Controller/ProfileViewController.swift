@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+    
         let uid = Auth.auth().currentUser?.uid
         if uid != nil {
         Model.instance.getUser(uid: uid!, callback: { (user) in
