@@ -13,7 +13,15 @@ import SVProgressHUD
 class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var email: UILabel!
+    
+    @IBOutlet weak var hight: UILabel!
+    
+    @IBOutlet weak var wight: UILabel!
     
     var image : UIImage?
  
@@ -25,10 +33,16 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
         super.viewDidLoad()
        
         let uid = Auth.auth().currentUser?.uid
+        if uid != nil {
         Model.instance.getUser(uid: uid!, callback: { (user) in
             
             self.currentUser = user
-            self.fullName.text = user?.fullName
+            self.userName.text = user?.userName
+            self.email.text = self.currentUser?.email
+            self.name.text = self.currentUser?.fullName
+            self.wight.text = self.currentUser?.wight
+            self.hight.text = self.currentUser?.hight
+            
             if user?.urlImage != nil {
                 
                 ModelFilesStore.getImage(name:(user?.userName)!, urlStr: (user?.urlImage)!, callback: { (profileImage) in
@@ -38,6 +52,7 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
             }
             
         })
+    }
         
 
         // Do any additional setup after loading the view.

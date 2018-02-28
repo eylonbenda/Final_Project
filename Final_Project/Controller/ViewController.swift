@@ -18,17 +18,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
-        
-//        model.getAllChestExercises { (exercises) in
-//            for exe in exercises!{
-//
-//                print(exe.name , exe.urlImage)
-//        }
-//
-        
-        
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
         
 //        if Auth.auth().currentUser != nil {

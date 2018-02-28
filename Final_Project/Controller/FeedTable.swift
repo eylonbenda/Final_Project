@@ -26,7 +26,6 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         configureTableView()
         
-        
         ModelNotification.postList.observe { (posts) in
             
             if posts != nil {
@@ -38,17 +37,7 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         Model.instance.getAllPostsAndObserve()
        
-//        ModelNotification.userList.observe { (users) in
-//
-//            if let userss = users {
-//
-//                self.users = userss
-//                self.feedTable.reloadData()
-//            }
-//        }
-        
-//        Model.instance.getAllUsersAndObserve()
-     
+
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -61,6 +50,7 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         if Auth.auth().currentUser != nil {
             // User is signed in.
+           
             
         } else {
             
