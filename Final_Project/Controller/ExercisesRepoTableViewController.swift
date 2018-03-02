@@ -78,6 +78,7 @@ class ExercisesRepoTableViewController: UITableViewController {
             
         } else if muscleGroupExercises.name == "ABS&Core" {
             
+           
             
             
         }
@@ -110,9 +111,6 @@ class ExercisesRepoTableViewController: UITableViewController {
             
             let des =  segue.destination as! ExerciseViewController
             des.exercise = exercise
-            
-            
-            
             
         }
         

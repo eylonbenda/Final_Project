@@ -22,7 +22,7 @@ class RegisterViewController: UIViewController {
     
     
     var newUser : User?
-    var modelUser : UserModelFirebase?
+//    var modelUser : UserModelFirebase?
     
     
   
@@ -31,7 +31,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        modelUser = UserModelFirebase()
+//        modelUser = UserModelFirebase()
 
         // Do any additional setup after loading the view.
     }
@@ -59,7 +59,8 @@ class RegisterViewController: UIViewController {
                 
                 let uid = Auth.auth().currentUser?.uid
                 self.newUser = User(uid: uid! ,email: self.email.text!, userName: self.userName.text!, fullName: self.fullName.text!, hight: self.hight.text!, wight: self.wight.text!,urlImage : nil)
-                self.modelUser?.addNewUser(user: self.newUser!)
+//                self.modelUser?.addNewUser(user: self.newUser!)
+                Model.instance.addUser(user: self.newUser!)
                 print("Registration sucsseful!")
                 self.dismiss(animated: true, completion: nil)
                 SVProgressHUD.dismiss()

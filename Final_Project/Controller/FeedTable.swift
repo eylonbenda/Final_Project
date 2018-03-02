@@ -19,6 +19,8 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     
     var listPosts = [Post]()
     var post : Post?
+    
+    var delegate : LoginUser?
 
     
     override func viewDidLoad() {
@@ -57,6 +59,14 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
             performSegue(withIdentifier: "goToAuth", sender: self)
             
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+      
+        
+        
+        
     }
     @IBAction func LogOutPress(_ sender: Any) {
         

@@ -10,12 +10,17 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class LoginViewController: UIViewController {
+protocol LoginUser {
+    func updaeUser(user : User)
+}
+
+class LoginViewController: UIViewController  {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-//    var model : ExerciseModelFirebase?
+    var delegate : LoginUser?
+    
     
     
     override func viewDidLoad() {

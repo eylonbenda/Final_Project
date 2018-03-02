@@ -543,7 +543,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar 2" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ae-Qsb">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar 2" translatesAutoresizingMaskIntoConstraints="NO" id="QPe-ae-Qsb">
                                             <rect key="frame" x="0.0" y="20" width="375" height="145"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="145" id="tiy-lu-6sl"/>

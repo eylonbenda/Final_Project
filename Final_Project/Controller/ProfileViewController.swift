@@ -10,17 +10,13 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
+class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate , LoginUser {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var name: UILabel!
-    
     @IBOutlet weak var email: UILabel!
-    
     @IBOutlet weak var hight: UILabel!
-    
     @IBOutlet weak var wight: UILabel!
     
     var image : UIImage?
@@ -37,25 +33,37 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
         Model.instance.getUser(uid: uid!, callback: { (user) in
             
             self.currentUser = user
-            self.userName.text = user?.userName
-            self.email.text = self.currentUser?.email
-            self.name.text = self.currentUser?.fullName
-            self.wight.text = self.currentUser?.wight
-            self.hight.text = self.currentUser?.hight
-            
-            if user?.urlImage != nil {
-                
-                ModelFilesStore.getImage(name:(user?.userName)!, urlStr: (user?.urlImage)!, callback: { (profileImage) in
-                    self.profileImage.image = profileImage
-                })
-                
-            }
             
         })
     }
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        
+        self.userName.text = self.currentUser?.userName
+        self.email.text = self.currentUser?.email
+        self.name.text = self.currentUser?.fullName
+        self.wight.text = self.currentUser?.wight
+        self.hight.text = self.currentUser?.hight
+        
+        if currentUser?.urlImage != nil {
+            
+            ModelFilesStore.getImage(name:(currentUser?.userName)!, urlStr: (currentUser?.urlImage)!, callback: { (profileImage) in
+                self.profileImage.image = profileImage
+            })
+            
+        }
+        
+    }
+    
+    func updaeUser(user : User){
+        
+        self.currentUser = user
+        
     }
 
     override func didReceiveMemoryWarning() {
