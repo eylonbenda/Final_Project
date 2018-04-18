@@ -30,7 +30,6 @@ class ModelFilesStore {
         let url = URL(string: urlStr)
         let localImageName = url!.lastPathComponent
         if let image = LocalFileStore.getImageFromFile(name: localImageName){
-            print("image was taken from local-storage")
             callback(image)
         }else{
             print("image was taken from firebase")

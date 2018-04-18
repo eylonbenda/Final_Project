@@ -49,11 +49,11 @@ class Model {
     
    	static let instance = Model()
     
-    private lazy var postModelFB = PostModelFireBase()
     
+    
+    private lazy var postModelFB = PostModelFireBase()
     private lazy var usermodelFirebase = UserModelFirebase()
     private lazy var modelSql = ModelSQLite()
-    
     private lazy var annotationModel = AnnotaionModel()
     
     private init(){
@@ -139,6 +139,7 @@ class Model {
     func getUser(uid : String , callback : @escaping (User?) -> Void){
         
         usermodelFirebase.getUser(uid: uid, callback: callback)
+       
     }
     
     func getAllUsers(callback : @escaping ([User]?)->Void){

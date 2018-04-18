@@ -11,7 +11,7 @@ import Firebase
 import SVProgressHUD
 
 protocol LoginUser {
-    func updaeUser(user : User)
+    func notifyUserConncted(user : User)
 }
 
 class LoginViewController: UIViewController  {
@@ -20,6 +20,7 @@ class LoginViewController: UIViewController  {
     @IBOutlet weak var password: UITextField!
     
     var delegate : LoginUser?
+    var currentUser : User?
     
     
     
@@ -48,7 +49,11 @@ class LoginViewController: UIViewController  {
                 
             } else {
                 
-                print("succesful login!")
+                let uid = Auth.auth().currentUser?.uid
+                Model.instance.getUser(uid: uid!, callback: { (user) in
+                    self.currentUser = user
+                  ModelNotification.user.post(data: self.currentUser!)
+                })
                 
                self.dismiss(animated: true, completion: nil)
                 SVProgressHUD.dismiss()
@@ -58,14 +63,7 @@ class LoginViewController: UIViewController  {
     
     }
     
-    func createAlert(title : String , message :  String){
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
-    }
+    
     
     /*
     // MARK: - Navigation

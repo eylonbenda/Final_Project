@@ -122,12 +122,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Final_Project/Model/Model.swift"
-            timestampString = "541173505.435937"
+            timestampString = "545759771.41935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "getAllUsersAndObserve()"
+            landmarkName = "getAllPostsAndObserve()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -170,13 +170,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Final_Project/Controller/FeedTable.swift"
-            timestampString = "541666007.6311719"
+            timestampString = "545759771.419474"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "numberOfSections(in:)"
-            landmarkType = "7">
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "FeedTable"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Final_Project/Controller/FeedTable.swift"
-            timestampString = "541666007.631251"
+            timestampString = "545759771.419551"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -333,22 +333,6 @@
             startingLineNumber = "48"
             endingLineNumber = "48"
             landmarkName = "init(fromJson:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Final_Project/Controller/ProfileViewController.swift"
-            timestampString = "541666007.631397"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

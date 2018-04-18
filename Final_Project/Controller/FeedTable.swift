@@ -10,17 +10,18 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate , RecievePost {
+
+
+class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate , RecievePost,RecieveUserConnected {
     
    
     @IBOutlet var feedTable: UITableView!
     
     var users = [User]()
-    
     var listPosts = [Post]()
     var post : Post?
+    var currentUser : User?
     
-    var delegate : LoginUser?
 
     
     override func viewDidLoad() {
@@ -38,14 +39,12 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         }
         
         Model.instance.getAllPostsAndObserve()
-       
-
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
+    }
+    
+    deinit {
+        ModelNotification.removeObserver(observer: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,14 +59,14 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
             
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    func updateUserConnected(user : User){
         
-      
-        
-        
+        self.currentUser = user
         
     }
+    
+    
     @IBAction func LogOutPress(_ sender: Any) {
         
         SVProgressHUD.show()

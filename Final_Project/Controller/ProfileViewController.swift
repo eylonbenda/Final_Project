@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate , LoginUser {
+class ProfileViewController: UIViewController , UIImagePickerControllerDelegate , UINavigationControllerDelegate  {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
@@ -27,17 +27,17 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        let uid = Auth.auth().currentUser?.uid
-        if uid != nil {
-        Model.instance.getUser(uid: uid!, callback: { (user) in
+        
+        ModelNotification.user.observe { (user) in
             
             self.currentUser = user
             
-        })
-    }
+        }
         
-
+        let uid = Auth.auth().currentUser?.uid
+        Model.instance.getUser(uid: uid!) { (user) in
+            self.currentUser = user
+        }
         // Do any additional setup after loading the view.
     }
     

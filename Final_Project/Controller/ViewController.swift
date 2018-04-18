@@ -10,9 +10,13 @@ import UIKit
 import Firebase
 import SVProgressHUD
 
-class ViewController: UIViewController {
+protocol  RecieveUserConnected {
+    func updateUserConnected(user : User)
+}
+
+class ViewController: UIViewController , LoginUser {
     
-    
+    var delegateRecieveUser : RecieveUserConnected?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,13 @@ class ViewController: UIViewController {
             
             
         }
+    }
+    
+    
+    func notifyUserConncted(user : User){
+        
+        delegateRecieveUser?.updateUserConnected(user: user)
+        
     }
     
     
