@@ -28,6 +28,8 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         ModelNotification.user.observe { (user) in
             
             self.currentUser = user
@@ -35,8 +37,14 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
         }
         
         let uid = Auth.auth().currentUser?.uid
+        if uid == nil {
+            
+            performSegue(withIdentifier: "goToRegister", sender: self)
+            
+        }else{
         Model.instance.getUser(uid: uid!) { (user) in
             self.currentUser = user
+         }
         }
         // Do any additional setup after loading the view.
     }

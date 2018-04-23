@@ -16,9 +16,10 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     
    
     @IBOutlet var feedTable: UITableView!
-    
+
     var users = [User]()
     var listPosts = [Post]()
+    var comments=[Comment]()
     var post : Post?
     var currentUser : User?
     
@@ -26,6 +27,8 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         
         configureTableView()
         
@@ -40,7 +43,8 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         Model.instance.getAllPostsAndObserve()
         
-       
+
+        
     }
     
     deinit {
@@ -86,6 +90,7 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         
     }
+
     @IBAction func uploadPost(_ sender: Any) {
         
         performSegue(withIdentifier: "addPostSegue" , sender: self)

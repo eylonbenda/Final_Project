@@ -75,7 +75,6 @@ class User {
         jsonObj["hight"] = hight
         jsonObj["wight"] = wight
         jsonObj["urlImage"] = urlImage
-        
         jsonObj["lastUpdate"] = ServerValue.timestamp()
 //        jsonObj["myPlans"] = myPlanToJson(myPlans: myPlans)
         return jsonObj

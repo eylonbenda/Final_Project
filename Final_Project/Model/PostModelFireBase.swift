@@ -54,8 +54,6 @@ class PostModelFireBase {
             }else{
                 myRef?.observe(.value, with: handler)
             }
-        
-    
     }
     
     

@@ -13,7 +13,7 @@ class FeedTableViewCell: UITableViewCell {
     @IBOutlet weak var imageCell: UIImageView!
     @IBOutlet weak var postDes: UILabel!
     @IBOutlet weak var userName: UILabel!
-    
+    @IBOutlet weak var commentContent: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +25,12 @@ class FeedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+  
+    @IBAction func addComment(_ sender: Any) {
+        var cmtContent = commentContent.text!
+        var comment = Comment(content: cmtContent, author: userName.text!)
+        
+        
+    }
+    
 }

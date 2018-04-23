@@ -17,13 +17,14 @@ class Post {
     var author : String?
     var lastUpdate : Date?
     var postID = NSUUID().uuidString
-    
+    var comments=[Comment]()
     
     init(urlImage : String , description : String? , author : String? ) {
         
         self.urlImage = urlImage
         self.description = description
         self.author = author
+        
     }
     
     init(fromJson : [String : Any]) {
@@ -37,6 +38,7 @@ class Post {
         }
         
         
+        
     }
     
     
@@ -48,12 +50,20 @@ class Post {
         postObj["author"] = self.author
         postObj["postID"] = self.postID
         postObj["lastUpdate"] = ServerValue.timestamp()
+        postObj["comments"] = myCommentToJson(myComments: comments)
         //TODO:  ADD USER VALUE
         return postObj
         
     }
     
-    
+    func myCommentToJson(myComments:[Comment])->[String:Any]
+    {
+        var map=[String:Any]()
+        for  comment in myComments{
+            map[comment.author!] = comment.commentToJson()
+        }
+        return map
+    }
     
     
     
