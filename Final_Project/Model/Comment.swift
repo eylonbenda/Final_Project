@@ -10,6 +10,12 @@ import Foundation
 class Comment{
     var author:String?
     var content: String?
+    var user : User?
+    
+    init(content : String,user : User) {
+        self.content = content
+        self.user = user
+    }
     
     
     init(content : String,author : String) {
@@ -18,8 +24,8 @@ class Comment{
     }
     
     init(json: [String:Any]){
-        self.author = json["author"] as! String
-        self.content = json["content"] as! String
+        self.author = json["author"] as? String
+        self.content = json["content"] as? String
         
     }
     

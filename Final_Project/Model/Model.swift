@@ -34,6 +34,7 @@ class ModelNotification {
     static let userList = ModelNotificationBase<[User]>(name: "UserListNotification")
     static let user = ModelNotificationBase<User>(name: "UserNotification")
     static let postList = ModelNotificationBase<[Post]>(name: "PostListNotification")
+    static let post = ModelNotificationBase<Post>(name:"PostNotification")
     
     
     static func removeObserver(observer:Any){
@@ -77,6 +78,14 @@ class Model {
         postModelFB.addPost(newPost: post)
     }
     
+    func addCommentToPost(post : Post){
+        postModelFB.addCommentForPost(post: post)
+    }
+    
+    func getPostById(post : Post, callback: @escaping (Post?) -> Void){
+        postModelFB.getPostByID(uid: post.postID!, callback: callback)
+    }
+    
     
     func getAllPostsAndObserve(){
         
@@ -89,8 +98,9 @@ class Model {
         // get all updated records from firebase
         postModelFB.getAllPostsAndObserve(lastUpdateDate: lastUpdateDate, callback: { (posts) in
             //update the local db
-            print("got \(posts!.count) new records from FB")
             var lastUpdate:Date?
+            if posts != nil {
+            print("got \(posts!.count) new records from FB")
             for post in posts!{
                 post.addNewPost(database: self.modelSql?.database)
                 if lastUpdate == nil{
@@ -101,6 +111,8 @@ class Model {
                     }
                 }
             }
+        }
+         
             
             //upadte the last update table
             if (lastUpdate != nil){
@@ -119,7 +131,7 @@ class Model {
             })
             
             for post in totalList {
-                print(post.lastUpdate!)
+                print(post.postID)
             }
             
             

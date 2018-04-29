@@ -28,8 +28,6 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         ModelNotification.user.observe { (user) in
             
             self.currentUser = user
@@ -57,6 +55,8 @@ class ProfileViewController: UIViewController , UIImagePickerControllerDelegate 
         self.name.text = self.currentUser?.fullName
         self.wight.text = self.currentUser?.wight
         self.hight.text = self.currentUser?.hight
+        profileImage.layer.cornerRadius = profileImage.bounds.width / 2.0
+        profileImage.layer.masksToBounds = true
         
         if currentUser?.urlImage != nil {
             

@@ -22,6 +22,7 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     var comments=[Comment]()
     var post : Post?
     var currentUser : User?
+    var rowIndex : Int = 0
     
 
     
@@ -43,7 +44,6 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         Model.instance.getAllPostsAndObserve()
         
-
         
     }
     
@@ -55,11 +55,16 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
         if Auth.auth().currentUser != nil {
             // User is signed in.
+            let uid = Auth.auth().currentUser?.uid
+            Model.instance.getUser(uid: uid!, callback: { (user) in
+                self.currentUser = user
+            })
            
             
         } else {
             
             performSegue(withIdentifier: "goToAuth", sender: self)
+            
             
         }
     }
@@ -70,6 +75,26 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         
     }
     
+    @IBAction func addComment(_ sender: UIButton) {
+        
+       self.post = listPosts[sender.tag]
+        performSegue(withIdentifier: "goToComments", sender: self)
+        
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "goToComments" {
+
+            let desVC = segue.destination as! CommentsForPostViewController
+            desVC.post = post
+            desVC.currentUser = self.currentUser
+
+        }
+
+
+    }
     
     @IBAction func LogOutPress(_ sender: Any) {
         
@@ -115,19 +140,30 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
         return listPosts.count
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        rowIndex = indexPath.row
+        print("row \(indexPath.row) was selected")
+    }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feed_cell", for: indexPath) as! FeedTableViewCell
         
-        let post = listPosts[indexPath.row]
+         let post = listPosts[indexPath.row]
+        
+        cell.commentButtom.tag = indexPath.row
+        cell.commentButtom.addTarget(self, action: #selector(FeedTable.addComment(_:)) , for: .touchUpInside)
+        cell.userName.text = post.author
+        cell.authorImage.layer.cornerRadius = cell.authorImage.bounds.width / 2.0
+        cell.authorImage.layer.masksToBounds = true
+        cell.postDes.text = post.description
         
         if post.urlImage != nil {
-            
-            cell.userName.text = post.author
-            cell.postDes.text = post.description
-            ModelFilesStore.getImage(name: post.description!, urlStr: post.urlImage!, callback: { (image) in
+        
+            ModelFilesStore.getImage(name: (post.description!), urlStr: (post.urlImage!), callback: { (image) in
                 cell.imageCell.image = image
+                
             })
             
         }
@@ -144,14 +180,14 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     
     func configureTableView(){
         
-        feedTable.estimatedRowHeight = 140
+        feedTable.estimatedRowHeight = 570.0
         feedTable.rowHeight =  UITableViewAutomaticDimension
         
         
     }
     
    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 570.0
     }
 
     /*

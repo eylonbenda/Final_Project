@@ -24,8 +24,32 @@ class PostModelFireBase {
     
     func addPost(newPost : Post){
         
-        let myRef = ref?.child("Posts").child(newPost.postID)
+        let myRef = ref?.child("Posts").child(newPost.postID!)
         myRef?.setValue(newPost.postTojson())
+        
+    }
+    
+    func addCommentForPost(post : Post){
+        
+        let myRef = ref?.child("Posts").child(post.postID!).child("comments")
+        myRef?.setValue(post.addCommentToPost())
+        
+        
+        
+    }
+    
+    func getPostByID(uid : String , callback : @escaping (Post?) -> Void){
+        
+        let myRef = ref?.child("Posts").child(uid)
+        myRef?.observe(.value, with: { (snapShot) in
+            if let val = snapShot.value as? [String : Any] {
+                
+                let post = Post(fromJson: val)
+                callback(post)
+            } else {
+                callback(nil)
+            }
+        })
         
     }
     

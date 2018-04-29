@@ -16,11 +16,21 @@ class Post {
     var description : String?
     var author : String?
     var lastUpdate : Date?
-    var postID = NSUUID().uuidString
+    var postID : String?
     var comments=[Comment]()
     
     init(urlImage : String , description : String? , author : String? ) {
         
+        self.postID = NSUUID().uuidString
+        self.urlImage = urlImage
+        self.description = description
+        self.author = author
+        
+    }
+    
+    init(urlImage : String , description : String? , author : String?, postID : String? ) {
+        
+        self.postID = postID
         self.urlImage = urlImage
         self.description = description
         self.author = author
@@ -29,13 +39,23 @@ class Post {
     
     init(fromJson : [String : Any]) {
         
-        self.postID = fromJson["postID"] as! String
+        self.postID = fromJson["postID"] as? String
         self.urlImage = fromJson["urlImage"] as? String
         self.description = fromJson["description"] as? String
         self.author = fromJson["author"] as? String
         if let date = fromJson["lastUpdate"] as? Double{
             self.lastUpdate = Date.fromFirebase(date)
         }
+        
+        if fromJson["comments"] != nil{
+            let plans  = fromJson["comments"] as! [String: Any]
+            for (_, val) in plans {
+                let temp = val as! [String:Any]
+                let comment = Comment(json: temp)
+                comments.append(comment)
+            }
+        }
+        
         
         
         
@@ -50,9 +70,16 @@ class Post {
         postObj["author"] = self.author
         postObj["postID"] = self.postID
         postObj["lastUpdate"] = ServerValue.timestamp()
-        postObj["comments"] = myCommentToJson(myComments: comments)
         //TODO:  ADD USER VALUE
         return postObj
+        
+    }
+    
+    func addCommentToPost() -> [String:Any]{
+        
+        var mapCmt = [String:Any]()
+        mapCmt = myCommentToJson(myComments: comments)
+        return mapCmt
         
     }
     

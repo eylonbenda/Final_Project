@@ -33,7 +33,7 @@ extension Post{
         var sqlite3_stmt: OpaquePointer? = nil
         if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO POSTS(POSTID, URLIMAGE, DESCREPTION,AUTHOR,LASTUPDATE) VALUES (?,?,?,?,?);",-1,&sqlite3_stmt,nil) == SQLITE_OK){
             
-            let postid = self.postID.cString(using: .utf8)
+            let postid = self.postID?.cString(using: .utf8)
             let descreption = self.description?.cString(using: .utf8)
             let author = self.author?.cString(using: .utf8)
            
@@ -82,7 +82,7 @@ extension Post{
                 let lastUpdate = Double(sqlite3_column_double(sqlite3_stmt,4))
                 
                 
-                let post = Post(urlImage: urlImage!, description: descreption, author: author)
+                let post = Post(urlImage: urlImage!, description: descreption, author: author, postID: postID)
                 post.lastUpdate = Date.fromFirebase(lastUpdate)
                 posts.append(post)
                
