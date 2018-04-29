@@ -35,6 +35,7 @@ class ModelNotification {
     static let user = ModelNotificationBase<User>(name: "UserNotification")
     static let postList = ModelNotificationBase<[Post]>(name: "PostListNotification")
     static let post = ModelNotificationBase<Post>(name:"PostNotification")
+    static let commentsList  = ModelNotificationBase<[Comment]>(name:"CommentsListNotification")
     
     
     static func removeObserver(observer:Any){
@@ -85,6 +86,18 @@ class Model {
     func getPostById(post : Post, callback: @escaping (Post?) -> Void){
         postModelFB.getPostByID(uid: post.postID!, callback: callback)
     }
+    
+    func getAllCommentsOfPost(post : Post){
+        postModelFB.getAllCommentsOfPost(uid: post.postID!) { (list) in
+            if list != nil {
+            ModelNotification.commentsList.post(data: list!)
+            for cmt in list!{
+                print(cmt.content!)
+            }
+        }
+    }
+        
+}
     
     
     func getAllPostsAndObserve(){

@@ -38,6 +38,26 @@ class PostModelFireBase {
         
     }
     
+    func getAllCommentsOfPost(uid : String , callback : @escaping ([Comment]?) -> Void){
+        
+         let myRef = ref?.child("Posts").child(uid).child("comments")
+        myRef?.observe(.value, with: { (snapshot) in
+            
+            if let values = snapshot.value as? [String : [String : Any]] {
+                var commentArr = [Comment]()
+                for commentJson in values{
+                    let comment = Comment(json: commentJson.value)
+                    commentArr.append(comment)
+                }
+                callback(commentArr)
+            } else {
+                callback(nil)
+            }
+        })
+        
+        
+    }
+    
     func getPostByID(uid : String , callback : @escaping (Post?) -> Void){
         
         let myRef = ref?.child("Posts").child(uid)

@@ -22,15 +22,18 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
         return commmentsList.count
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsForPostCell", for: indexPath) as! CommentsForPostCell
-        let comment = post?.comments[indexPath.row]
-        cell.userName.text = comment?.author
-        cell.commentContent.text = comment?.content
-        
+        let comment = commmentsList[indexPath.row]
+        cell.userName.text = comment.author
+        cell.commentContent.text = comment.content
         
         return cell
         
@@ -41,24 +44,41 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
         let comment = Comment(content: input.text!, author: (currentUser?.userName)!)
         post?.comments.append(comment)
         Model.instance.addCommentToPost(post: post!)
-        commentsTable.reloadData()
+        
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commentsTable.delegate = self
+        commentsTable.dataSource = self
 
         commentsTable.estimatedRowHeight = 65.0
         commentsTable.rowHeight =  UITableViewAutomaticDimension
         
-        Model.instance.getPostById(post: post!) { (post) in
-            if post != nil {
-            self.post = post
-            self.commentsTable.reloadData()
+        ModelNotification.commentsList.observe { (comments) in
+            if comments != nil{
+                self.commmentsList = comments!
+                self.commentsTable.reloadData()
+                
+            }
         }
-    }
+        
+        Model.instance.getAllCommentsOfPost(post: self.post!)
+        
+//        Model.instance.getPostById(post: post!) { (post) in
+//            if post != nil {
+//            self.post = post
+//            self.commentsTable.reloadData()
+//        }
+//    }
         
 }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65.0
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

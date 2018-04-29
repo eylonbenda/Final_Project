@@ -1,4 +1,4 @@
-//
+	//
 //  FeedTable.swift
 //  Final_Project
 //
@@ -28,6 +28,7 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
        
         
