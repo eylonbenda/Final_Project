@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class CommentsForPostViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
     
@@ -16,10 +18,11 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
     var currentUser : User?
     var post : Post?
     
+    
     @IBOutlet weak var commentsTable: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return commmentsList.count
+        return (post?.comments.count)!
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -31,9 +34,9 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "commentsForPostCell", for: indexPath) as! CommentsForPostCell
-        let comment = commmentsList[indexPath.row]
-        cell.userName.text = comment.author
-        cell.commentContent.text = comment.content
+        let post1 = self.post?.comments[indexPath.row]
+        cell.userName.text = post1?.author
+        cell.commentContent.text = post1?.content
         cell.imageUser.layer.cornerRadius = cell.imageUser.bounds.width / 2.0
         cell.imageUser.layer.masksToBounds = true
         
@@ -46,6 +49,7 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
         let comment = Comment(content: input.text!, author: (currentUser?.userName)!)
         post?.comments.append(comment)
         Model.instance.addCommentToPost(post: post!)
+        
         
         
     }
@@ -61,7 +65,7 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
         
         ModelNotification.commentsList.observe { (comments) in
             if comments != nil{
-                self.commmentsList = comments!
+                self.post?.comments = comments!
                 self.commentsTable.reloadData()
                 
             }
