@@ -69,6 +69,11 @@ class FeedTable: UITableViewController , UIImagePickerControllerDelegate , UINav
             
         }
     }
+    
+    func receivePost(post : Post){
+        
+        self.post = post
+    }
 
     func updateUserConnected(user : User){
         
