@@ -19,6 +19,7 @@ provides-dynamic-lookup:
 - "wight"
 depends-top-level:
 - !private "!="
+- !private "/"
 - !private "=="
 - "AssignmentPrecedence"
 - !private "Auth"
@@ -45,8 +46,15 @@ depends-member:
 - !private ["So4AuthC", "currentUser"]
 - !private ["s23BidirectionalCollectionP", "init"]
 - !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["So7CALayerC", "cornerRadius"]
+- !private ["So7CALayerC", "masksToBounds"]
+- !private ["So15CALayerDelegateP", "bounds"]
 - !private ["So15CALayerDelegateP", "image"]
+- !private ["So15CALayerDelegateP", "layer"]
 - !private ["So15CALayerDelegateP", "text"]
+- !private ["So13CAMediaTimingP", "cornerRadius"]
+- !private ["So13CAMediaTimingP", "masksToBounds"]
+- !private ["SC6CGRectV", "width"]
 - !private ["s7CVarArgP", "Auth"]
 - !private ["s7CVarArgP", "Model"]
 - !private ["s7CVarArgP", "ModelFilesStore"]
@@ -57,6 +65,8 @@ depends-member:
 - !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "allowsEditing"]
 - !private ["s7CVarArgP", "auth"]
+- !private ["s7CVarArgP", "bounds"]
+- !private ["s7CVarArgP", "cornerRadius"]
 - !private ["s7CVarArgP", "currentUser"]
 - !private ["s7CVarArgP", "delegate"]
 - !private ["s7CVarArgP", "didReceiveMemoryWarning"]
@@ -68,6 +78,8 @@ depends-member:
 - ["s7CVarArgP", "imagePickerControllerDidCancel"]
 - !private ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "isSourceTypeAvailable"]
+- !private ["s7CVarArgP", "layer"]
+- !private ["s7CVarArgP", "masksToBounds"]
 - !private ["s7CVarArgP", "name"]
 - ["s7CVarArgP", "navigationController"]
 - ["s7CVarArgP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -95,6 +107,8 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", ""]
 - !private ["s28CustomDebugStringConvertibleP", "allowsEditing"]
 - !private ["s28CustomDebugStringConvertibleP", "auth"]
+- !private ["s28CustomDebugStringConvertibleP", "bounds"]
+- !private ["s28CustomDebugStringConvertibleP", "cornerRadius"]
 - !private ["s28CustomDebugStringConvertibleP", "currentUser"]
 - !private ["s28CustomDebugStringConvertibleP", "delegate"]
 - !private ["s28CustomDebugStringConvertibleP", "didReceiveMemoryWarning"]
@@ -106,6 +120,8 @@ depends-member:
 - ["s28CustomDebugStringConvertibleP", "imagePickerControllerDidCancel"]
 - !private ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "isSourceTypeAvailable"]
+- !private ["s28CustomDebugStringConvertibleP", "layer"]
+- !private ["s28CustomDebugStringConvertibleP", "masksToBounds"]
 - !private ["s28CustomDebugStringConvertibleP", "name"]
 - ["s28CustomDebugStringConvertibleP", "navigationController"]
 - ["s28CustomDebugStringConvertibleP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -120,12 +136,15 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "uid"]
 - !private ["s28CustomDebugStringConvertibleP", "userName"]
 - !private ["s28CustomDebugStringConvertibleP", "viewDidLoad"]
+- !private ["s28CustomDebugStringConvertibleP", "width"]
 - !private ["s28CustomDebugStringConvertibleP", "wight"]
 - !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s29CustomPlaygroundQuickLookableP", "width"]
 - !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "subscript"]
+- !private ["s17CustomReflectableP", "width"]
 - !private ["s23CustomStringConvertibleP", "Auth"]
 - !private ["s23CustomStringConvertibleP", "Model"]
 - !private ["s23CustomStringConvertibleP", "ModelFilesStore"]
@@ -136,6 +155,8 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "allowsEditing"]
 - !private ["s23CustomStringConvertibleP", "auth"]
+- !private ["s23CustomStringConvertibleP", "bounds"]
+- !private ["s23CustomStringConvertibleP", "cornerRadius"]
 - !private ["s23CustomStringConvertibleP", "currentUser"]
 - !private ["s23CustomStringConvertibleP", "delegate"]
 - !private ["s23CustomStringConvertibleP", "didReceiveMemoryWarning"]
@@ -147,6 +168,8 @@ depends-member:
 - ["s23CustomStringConvertibleP", "imagePickerControllerDidCancel"]
 - !private ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "isSourceTypeAvailable"]
+- !private ["s23CustomStringConvertibleP", "layer"]
+- !private ["s23CustomStringConvertibleP", "masksToBounds"]
 - !private ["s23CustomStringConvertibleP", "name"]
 - ["s23CustomStringConvertibleP", "navigationController"]
 - ["s23CustomStringConvertibleP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -165,10 +188,12 @@ depends-member:
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "subscript"]
+- !private ["s9DecodableP", "width"]
 - !private ["s10DictionaryV", "subscript"]
 - !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "subscript"]
+- !private ["s9EncodableP", "width"]
 - !private ["s9EquatableP", "Auth"]
 - !private ["s9EquatableP", "Model"]
 - !private ["s9EquatableP", "ModelFilesStore"]
@@ -179,7 +204,9 @@ depends-member:
 - !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "allowsEditing"]
 - !private ["s9EquatableP", "auth"]
+- !private ["s9EquatableP", "bounds"]
 - !private ["s9EquatableP", "camera"]
+- !private ["s9EquatableP", "cornerRadius"]
 - !private ["s9EquatableP", "currentUser"]
 - !private ["s9EquatableP", "delegate"]
 - !private ["s9EquatableP", "didReceiveMemoryWarning"]
@@ -191,6 +218,8 @@ depends-member:
 - ["s9EquatableP", "imagePickerControllerDidCancel"]
 - !private ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "isSourceTypeAvailable"]
+- !private ["s9EquatableP", "layer"]
+- !private ["s9EquatableP", "masksToBounds"]
 - !private ["s9EquatableP", "name"]
 - ["s9EquatableP", "navigationController"]
 - ["s9EquatableP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -206,6 +235,7 @@ depends-member:
 - !private ["s9EquatableP", "uid"]
 - !private ["s9EquatableP", "userName"]
 - !private ["s9EquatableP", "viewDidLoad"]
+- !private ["s9EquatableP", "width"]
 - !private ["s9EquatableP", "wight"]
 - !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
@@ -222,7 +252,9 @@ depends-member:
 - !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "allowsEditing"]
 - !private ["s8HashableP", "auth"]
+- !private ["s8HashableP", "bounds"]
 - !private ["s8HashableP", "camera"]
+- !private ["s8HashableP", "cornerRadius"]
 - !private ["s8HashableP", "currentUser"]
 - !private ["s8HashableP", "delegate"]
 - !private ["s8HashableP", "didReceiveMemoryWarning"]
@@ -234,6 +266,8 @@ depends-member:
 - ["s8HashableP", "imagePickerControllerDidCancel"]
 - !private ["s8HashableP", "init"]
 - !private ["s8HashableP", "isSourceTypeAvailable"]
+- !private ["s8HashableP", "layer"]
+- !private ["s8HashableP", "masksToBounds"]
 - !private ["s8HashableP", "name"]
 - ["s8HashableP", "navigationController"]
 - ["s8HashableP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -267,6 +301,8 @@ depends-member:
 - !private ["So8NSCodingP", "UIImagePickerControllerSourceType"]
 - ["So8NSCodingP", ""]
 - !private ["So8NSCodingP", "allowsEditing"]
+- !private ["So8NSCodingP", "bounds"]
+- !private ["So8NSCodingP", "cornerRadius"]
 - !private ["So8NSCodingP", "currentUser"]
 - !private ["So8NSCodingP", "delegate"]
 - !private ["So8NSCodingP", "didReceiveMemoryWarning"]
@@ -278,6 +314,8 @@ depends-member:
 - ["So8NSCodingP", "imagePickerControllerDidCancel"]
 - !private ["So8NSCodingP", "init"]
 - !private ["So8NSCodingP", "isSourceTypeAvailable"]
+- !private ["So8NSCodingP", "layer"]
+- !private ["So8NSCodingP", "masksToBounds"]
 - !private ["So8NSCodingP", "name"]
 - ["So8NSCodingP", "navigationController"]
 - ["So8NSCodingP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -336,7 +374,9 @@ depends-member:
 - ["So8NSObjectC", "User"]
 - !private ["So8NSObjectC", "allowsEditing"]
 - !private ["So8NSObjectC", "auth"]
+- !private ["So8NSObjectC", "bounds"]
 - ["So8NSObjectC", "changeImage"]
+- !private ["So8NSObjectC", "cornerRadius"]
 - ["So8NSObjectC", "currentUser"]
 - !private ["So8NSObjectC", "delegate"]
 - ["So8NSObjectC", "didReceiveMemoryWarning"]
@@ -348,6 +388,8 @@ depends-member:
 - ["So8NSObjectC", "imagePickerControllerDidCancel"]
 - ["So8NSObjectC", "init"]
 - !private ["So8NSObjectC", "isSourceTypeAvailable"]
+- !private ["So8NSObjectC", "layer"]
+- !private ["So8NSObjectC", "masksToBounds"]
 - ["So8NSObjectC", "name"]
 - ["So8NSObjectC", "navigationController"]
 - ["So8NSObjectC", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -373,6 +415,8 @@ depends-member:
 - ["So16NSObjectProtocolP", ""]
 - !private ["So16NSObjectProtocolP", "allowsEditing"]
 - !private ["So16NSObjectProtocolP", "auth"]
+- !private ["So16NSObjectProtocolP", "bounds"]
+- !private ["So16NSObjectProtocolP", "cornerRadius"]
 - !private ["So16NSObjectProtocolP", "currentUser"]
 - !private ["So16NSObjectProtocolP", "delegate"]
 - !private ["So16NSObjectProtocolP", "didReceiveMemoryWarning"]
@@ -384,6 +428,8 @@ depends-member:
 - ["So16NSObjectProtocolP", "imagePickerControllerDidCancel"]
 - !private ["So16NSObjectProtocolP", "init"]
 - !private ["So16NSObjectProtocolP", "isSourceTypeAvailable"]
+- !private ["So16NSObjectProtocolP", "layer"]
+- !private ["So16NSObjectProtocolP", "masksToBounds"]
 - !private ["So16NSObjectProtocolP", "name"]
 - ["So16NSObjectProtocolP", "navigationController"]
 - ["So16NSObjectProtocolP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -398,6 +444,8 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "userName"]
 - !private ["So16NSObjectProtocolP", "viewDidLoad"]
 - !private ["So16NSObjectProtocolP", "wight"]
+- !private ["So14NSSecureCodingP", "cornerRadius"]
+- !private ["So14NSSecureCodingP", "masksToBounds"]
 - !private ["13Final_Project21ProfileViewControllerC", "Auth"]
 - ["13Final_Project21ProfileViewControllerC", "Bool"]
 - !private ["13Final_Project21ProfileViewControllerC", "Model"]
@@ -443,10 +491,16 @@ depends-member:
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "bounds"]
 - !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "image"]
+- !private ["So48UIAccessibilityContentSizeCategoryImageAdjustingP", "layer"]
+- !private ["So29UIAccessibilityIdentificationP", "bounds"]
 - !private ["So29UIAccessibilityIdentificationP", "image"]
+- !private ["So29UIAccessibilityIdentificationP", "layer"]
 - !private ["So29UIAccessibilityIdentificationP", "text"]
+- !private ["So12UIAppearanceP", "bounds"]
 - !private ["So12UIAppearanceP", "image"]
+- !private ["So12UIAppearanceP", "layer"]
 - !private ["So12UIAppearanceP", "text"]
 - !private ["So21UIAppearanceContainerP", "Auth"]
 - !private ["So21UIAppearanceContainerP", "Model"]
@@ -456,6 +510,7 @@ depends-member:
 - !private ["So21UIAppearanceContainerP", "UIImagePickerControllerSourceType"]
 - ["So21UIAppearanceContainerP", ""]
 - !private ["So21UIAppearanceContainerP", "allowsEditing"]
+- !private ["So21UIAppearanceContainerP", "bounds"]
 - !private ["So21UIAppearanceContainerP", "currentUser"]
 - !private ["So21UIAppearanceContainerP", "delegate"]
 - !private ["So21UIAppearanceContainerP", "didReceiveMemoryWarning"]
@@ -467,6 +522,7 @@ depends-member:
 - ["So21UIAppearanceContainerP", "imagePickerControllerDidCancel"]
 - !private ["So21UIAppearanceContainerP", "init"]
 - !private ["So21UIAppearanceContainerP", "isSourceTypeAvailable"]
+- !private ["So21UIAppearanceContainerP", "layer"]
 - !private ["So21UIAppearanceContainerP", "name"]
 - ["So21UIAppearanceContainerP", "navigationController"]
 - ["So21UIAppearanceContainerP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -512,9 +568,13 @@ depends-member:
 - !private ["So18UIContentContainerP", "viewDidLoad"]
 - !private ["So18UIContentContainerP", "wight"]
 - !private ["So30UIContentSizeCategoryAdjustingP", "text"]
+- !private ["So17UICoordinateSpaceP", "bounds"]
 - !private ["So17UICoordinateSpaceP", "image"]
+- !private ["So17UICoordinateSpaceP", "layer"]
 - !private ["So17UICoordinateSpaceP", "text"]
+- !private ["So13UIDynamicItemP", "bounds"]
 - !private ["So13UIDynamicItemP", "image"]
+- !private ["So13UIDynamicItemP", "layer"]
 - !private ["So13UIDynamicItemP", "text"]
 - !private ["So18UIFocusEnvironmentP", "Auth"]
 - !private ["So18UIFocusEnvironmentP", "Model"]
@@ -524,6 +584,7 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "UIImagePickerControllerSourceType"]
 - ["So18UIFocusEnvironmentP", ""]
 - !private ["So18UIFocusEnvironmentP", "allowsEditing"]
+- !private ["So18UIFocusEnvironmentP", "bounds"]
 - !private ["So18UIFocusEnvironmentP", "currentUser"]
 - !private ["So18UIFocusEnvironmentP", "delegate"]
 - !private ["So18UIFocusEnvironmentP", "didReceiveMemoryWarning"]
@@ -535,6 +596,7 @@ depends-member:
 - ["So18UIFocusEnvironmentP", "imagePickerControllerDidCancel"]
 - !private ["So18UIFocusEnvironmentP", "init"]
 - !private ["So18UIFocusEnvironmentP", "isSourceTypeAvailable"]
+- !private ["So18UIFocusEnvironmentP", "layer"]
 - !private ["So18UIFocusEnvironmentP", "name"]
 - ["So18UIFocusEnvironmentP", "navigationController"]
 - ["So18UIFocusEnvironmentP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -548,7 +610,9 @@ depends-member:
 - !private ["So18UIFocusEnvironmentP", "userName"]
 - !private ["So18UIFocusEnvironmentP", "viewDidLoad"]
 - !private ["So18UIFocusEnvironmentP", "wight"]
+- !private ["So11UIFocusItemP", "bounds"]
 - !private ["So11UIFocusItemP", "image"]
+- !private ["So11UIFocusItemP", "layer"]
 - !private ["So11UIFocusItemP", "text"]
 - !private ["So23UIImagePickerControllerC", "allowsEditing"]
 - !private ["So23UIImagePickerControllerC", "delegate"]
@@ -581,7 +645,9 @@ depends-member:
 - !private ["So31UIImagePickerControllerDelegateP", "wight"]
 - !private ["SC33UIImagePickerControllerSourceTypeO", "camera"]
 - !private ["SC33UIImagePickerControllerSourceTypeO", "photoLibrary"]
+- !private ["So11UIImageViewC", "bounds"]
 - !private ["So11UIImageViewC", "image"]
+- !private ["So11UIImageViewC", "layer"]
 - !private ["So7UILabelC", "text"]
 - !private ["So22UINavigationControllerC", "allowsEditing"]
 - !private ["So22UINavigationControllerC", "delegate"]
@@ -620,6 +686,7 @@ depends-member:
 - !private ["So30UIPasteConfigurationSupportingP", "UIImagePickerControllerSourceType"]
 - ["So30UIPasteConfigurationSupportingP", ""]
 - !private ["So30UIPasteConfigurationSupportingP", "allowsEditing"]
+- !private ["So30UIPasteConfigurationSupportingP", "bounds"]
 - !private ["So30UIPasteConfigurationSupportingP", "currentUser"]
 - !private ["So30UIPasteConfigurationSupportingP", "delegate"]
 - !private ["So30UIPasteConfigurationSupportingP", "didReceiveMemoryWarning"]
@@ -631,6 +698,7 @@ depends-member:
 - ["So30UIPasteConfigurationSupportingP", "imagePickerControllerDidCancel"]
 - !private ["So30UIPasteConfigurationSupportingP", "init"]
 - !private ["So30UIPasteConfigurationSupportingP", "isSourceTypeAvailable"]
+- !private ["So30UIPasteConfigurationSupportingP", "layer"]
 - !private ["So30UIPasteConfigurationSupportingP", "name"]
 - ["So30UIPasteConfigurationSupportingP", "navigationController"]
 - ["So30UIPasteConfigurationSupportingP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -657,6 +725,7 @@ depends-member:
 - ["So11UIResponderC", "UILabel"]
 - ["So11UIResponderC", "User"]
 - !private ["So11UIResponderC", "allowsEditing"]
+- !private ["So11UIResponderC", "bounds"]
 - ["So11UIResponderC", "changeImage"]
 - ["So11UIResponderC", "currentUser"]
 - !private ["So11UIResponderC", "delegate"]
@@ -669,6 +738,7 @@ depends-member:
 - ["So11UIResponderC", "imagePickerControllerDidCancel"]
 - ["So11UIResponderC", "init"]
 - !private ["So11UIResponderC", "isSourceTypeAvailable"]
+- !private ["So11UIResponderC", "layer"]
 - ["So11UIResponderC", "name"]
 - ["So11UIResponderC", "navigationController"]
 - ["So11UIResponderC", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -692,6 +762,7 @@ depends-member:
 - !private ["So30UIResponderStandardEditActionsP", "UIImagePickerControllerSourceType"]
 - ["So30UIResponderStandardEditActionsP", ""]
 - !private ["So30UIResponderStandardEditActionsP", "allowsEditing"]
+- !private ["So30UIResponderStandardEditActionsP", "bounds"]
 - !private ["So30UIResponderStandardEditActionsP", "currentUser"]
 - !private ["So30UIResponderStandardEditActionsP", "delegate"]
 - !private ["So30UIResponderStandardEditActionsP", "didReceiveMemoryWarning"]
@@ -703,6 +774,7 @@ depends-member:
 - ["So30UIResponderStandardEditActionsP", "imagePickerControllerDidCancel"]
 - !private ["So30UIResponderStandardEditActionsP", "init"]
 - !private ["So30UIResponderStandardEditActionsP", "isSourceTypeAvailable"]
+- !private ["So30UIResponderStandardEditActionsP", "layer"]
 - !private ["So30UIResponderStandardEditActionsP", "name"]
 - ["So30UIResponderStandardEditActionsP", "navigationController"]
 - ["So30UIResponderStandardEditActionsP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -755,6 +827,7 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "UIImagePickerControllerSourceType"]
 - ["So18UITraitEnvironmentP", ""]
 - !private ["So18UITraitEnvironmentP", "allowsEditing"]
+- !private ["So18UITraitEnvironmentP", "bounds"]
 - !private ["So18UITraitEnvironmentP", "currentUser"]
 - !private ["So18UITraitEnvironmentP", "delegate"]
 - !private ["So18UITraitEnvironmentP", "didReceiveMemoryWarning"]
@@ -766,6 +839,7 @@ depends-member:
 - ["So18UITraitEnvironmentP", "imagePickerControllerDidCancel"]
 - !private ["So18UITraitEnvironmentP", "init"]
 - !private ["So18UITraitEnvironmentP", "isSourceTypeAvailable"]
+- !private ["So18UITraitEnvironmentP", "layer"]
 - !private ["So18UITraitEnvironmentP", "name"]
 - ["So18UITraitEnvironmentP", "navigationController"]
 - ["So18UITraitEnvironmentP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -779,7 +853,9 @@ depends-member:
 - !private ["So18UITraitEnvironmentP", "userName"]
 - !private ["So18UITraitEnvironmentP", "viewDidLoad"]
 - !private ["So18UITraitEnvironmentP", "wight"]
+- !private ["So6UIViewC", "bounds"]
 - !private ["So6UIViewC", "image"]
+- !private ["So6UIViewC", "layer"]
 - !private ["So6UIViewC", "text"]
 - !private ["So16UIViewControllerC", "Auth"]
 - ["So16UIViewControllerC", "Bool"]
@@ -829,7 +905,9 @@ depends-member:
 - !private ["13Final_Project4UserC", "wight"]
 - !private ["So4UserC", "uid"]
 - !private ["So8UserInfoP", "uid"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "bounds"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "image"]
+- !private ["s37_DefaultCustomPlaygroundQuickLookableP", "layer"]
 - !private ["s37_DefaultCustomPlaygroundQuickLookableP", "text"]
 - !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
@@ -846,6 +924,8 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", ""]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "allowsEditing"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "auth"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "bounds"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "cornerRadius"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "currentUser"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "delegate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "didReceiveMemoryWarning"]
@@ -857,6 +937,8 @@ depends-member:
 - ["10Foundation27_KeyValueCodingAndObservingP", "imagePickerControllerDidCancel"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "isSourceTypeAvailable"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "layer"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "masksToBounds"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "name"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "navigationController"]
 - ["10Foundation27_KeyValueCodingAndObservingP", "navigationControllerPreferredInterfaceOrientationForPresentation"]
@@ -874,12 +956,16 @@ depends-member:
 - !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
+- !private ["s21_ObjectiveCBridgeableP", "width"]
 - !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
 - !private "So4AuthC"
 - !private "s23BidirectionalCollectionP"
 - !private "Sb"
+- !private "So7CALayerC"
 - !private "So15CALayerDelegateP"
+- !private "So13CAMediaTimingP"
+- !private "SC6CGRectV"
 - "s7CVarArgP"
 - !private "s10CollectionP"
 - !private "s10ComparableP"
@@ -907,6 +993,7 @@ depends-nominal:
 - "So26NSExtensionRequestHandlingP"
 - "So8NSObjectC"
 - "So16NSObjectProtocolP"
+- !private "So14NSSecureCodingP"
 - "13Final_Project21ProfileViewControllerC"
 - !private "s26RangeReplaceableCollectionP"
 - !private "s16RawRepresentableP"
@@ -970,80 +1057,80 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/MapKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressHUD.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressHUD-umbrella.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserMetadata.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthAPNSTokenType.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/Firebase/Core/Sources/Firebase.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthUIDelegate.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthCredential.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuthVersion.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAdditionalUserInfo.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Final_Project/Model/Final_Project-Bridging-Header.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIROAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIREmailAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVRadialGradientLayer.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRActionCodeSettings.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthDataResult.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVIndefiniteAnimatedView.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressAnimatedView.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/Firebase/Core/Sources/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Modules/module.modulemap"
-- "/Users/ofirkariv/Desktop/School/160418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FIRInstanceID.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Headers/FirebaseInstanceID.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressHUD.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressHUD-umbrella.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRMutableData.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageMetadata.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserMetadata.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageReference.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseReference.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorage.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FirebaseStorage.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthAPNSTokenType.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataEventType.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FirebaseCore.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabase.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FirebaseDatabase.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/Firebase/Core/Sources/Firebase.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthUIDelegate.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics+AppDelegate.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRServerValue.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuth.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuth.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageDownloadTask.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageUploadTask.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTask.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageObservableTask.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthCredential.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthCredential.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRLoggerLevel.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FirebaseAuthVersion.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRConfiguration.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRConfiguration.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsConfiguration.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUserInfo.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAdditionalUserInfo.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIRApp.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRApp.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Final_Project/Model/Final_Project-Bridging-Header.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIROAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGitHubAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRGoogleAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRPhoneAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRFacebookAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIREmailAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRTwitterAuthProvider.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRUser.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVRadialGradientLayer.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalytics.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FirebaseAnalytics.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRParameterNames.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIREventNames.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRUserPropertyNames.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRActionCodeSettings.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Headers/FIROptions.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIROptions.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthErrors.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageConstants.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Headers/FIRAuthDataResult.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRTransactionResult.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDataSnapshot.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Headers/FIRStorageTaskSnapshot.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Headers/FIRAnalyticsSwiftNameSupport.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVIndefiniteAnimatedView.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Headers/SVProgressAnimatedView.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Headers/FIRDatabaseQuery.h"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/Firebase/Core/Sources/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseInstanceID/Frameworks/FirebaseInstanceID.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Build/Products/Debug-iphonesimulator/SVProgressHUD/SVProgressHUD.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseStorage/Frameworks/FirebaseStorage.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseCore/Frameworks/FirebaseCore.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseDatabase/Frameworks/FirebaseDatabase.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAuth/Frameworks/FirebaseAuth.framework/Modules/module.modulemap"
+- "/Users/ofirkariv/Desktop/300418/Final_Project/Pods/FirebaseAnalytics/Frameworks/FirebaseAnalytics.framework/Modules/module.modulemap"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/usr/include/objc/ObjectiveC.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
 - "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.3.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"

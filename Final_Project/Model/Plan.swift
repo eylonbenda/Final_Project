@@ -17,6 +17,12 @@ class Plan{
         self.exercises = exercises
     }
     
+    init(planName : String?) {
+        self.planName = planName
+    }
+    
+    
+    
     init(jsonToPlan : [String : Any]) {
         
         
@@ -43,7 +49,6 @@ class Plan{
         
         var jsonObj = [String:Any]()
         jsonObj["planName"] = planName
-        
         jsonObj["exercises"] = exercisesToJason(exercises: exercises)
         print(jsonObj)
         return jsonObj

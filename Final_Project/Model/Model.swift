@@ -216,6 +216,10 @@ class Model {
         
     }
     
+    func addPlanToUser(user : User){
+        usermodelFirebase.addTrainPlanToUser(user: user)
+    }
+    
     
     
 }

@@ -47,6 +47,8 @@
 		84FB3B091FFE40DE009C363B /* WorkoutsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */; };
 		84FB3B0B1FFE46C8009C363B /* FeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FB3B0A1FFE46C8009C363B /* FeedTable.swift */; };
 		B1CE1039F69B436F523698F9 /* Pods_Final_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32282E27785FBF70B8E46B96 /* Pods_Final_ProjectTests.framework */; };
+		B7C2551320975C32009CCDFC /* PlansViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C2551220975C32009CCDFC /* PlansViewController.swift */; };
+		B7C255152097610B009CCDFC /* plansViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C255142097610B009CCDFC /* plansViewCell.swift */; };
 		B7CB89FB208E204F005364D6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CB89FA208E204F005364D6 /* Comment.swift */; };
 		F143DD232044577B00DE518F /* post+sql.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143DD222044577B00DE518F /* post+sql.swift */; };
 		F1538FC32042E43F0056F39B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1538FC22042E43F0056F39B /* Post.swift */; };
@@ -135,6 +137,8 @@
 		84FB3B081FFE40DE009C363B /* WorkoutsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsTableViewController.swift; sourceTree = "<group>"; };
 		84FB3B0A1FFE46C8009C363B /* FeedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTable.swift; sourceTree = "<group>"; };
 		AE04F0ECC8ABE19E403DBFD0 /* Pods-Final_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_ProjectUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final_ProjectUITests/Pods-Final_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B7C2551220975C32009CCDFC /* PlansViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlansViewController.swift; sourceTree = "<group>"; };
+		B7C255142097610B009CCDFC /* plansViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plansViewCell.swift; sourceTree = "<group>"; };
 		B7CB89FA208E204F005364D6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		BBAE524F9E6E1DE5BFA81B2B /* Pods-Final_Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final_Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Final_Project/Pods-Final_Project.release.xcconfig"; sourceTree = "<group>"; };
 		ED7B8594A28F32FAA5B86E5A /* Pods_Final_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Final_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -255,6 +259,8 @@
 				847FA3B22092248E001D48AC /* CommentsForPost.swift */,
 				847FA3B420922597001D48AC /* CommentsForPostCell.swift */,
 				84ADEA79209343F7005E9CF6 /* CommentsForPostViewController.swift */,
+				B7C2551220975C32009CCDFC /* PlansViewController.swift */,
+				B7C255142097610B009CCDFC /* plansViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -650,6 +656,7 @@
 			files = (
 				847CA88F200A1ABC00DA9F74 /* ModelFilesStore.swift in Sources */,
 				84C7DDAC1FFE9A300033EBCC /* UserModelFirebase.swift in Sources */,
+				B7C255152097610B009CCDFC /* plansViewCell.swift in Sources */,
 				F16BD812203F032400FFDBBB /* Utilits.swift in Sources */,
 				84EE55BE1FEFF07C00588A61 /* Final_Project.xcdatamodeld in Sources */,
 				847FA3B32092248E001D48AC /* CommentsForPost.swift in Sources */,
@@ -665,6 +672,7 @@
 				F19D11DE1FF15575003AE817 /* LoginViewController.swift in Sources */,
 				84C03E151FFE56BB00DB9569 /* ExerciseViewController.swift in Sources */,
 				F1E5098D1FF8F92300E4A80C /* ExercisesRepoCellTableViewCell.swift in Sources */,
+				B7C2551320975C32009CCDFC /* PlansViewController.swift in Sources */,
 				F1538FC52042E6BF0056F39B /* PostModelFireBase.swift in Sources */,
 				840FDB1E2020C08600EDEDAC /* UserModelSQL.swift in Sources */,
 				84FB3B071FFE3678009C363B /* ProfileViewController.swift in Sources */,
@@ -863,6 +871,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBT3F25EZD;
 				INFOPLIST_FILE = Final_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eylon.Final-Project";
@@ -881,6 +890,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FBT3F25EZD;
 				INFOPLIST_FILE = Final_Project/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.eylon.Final-Project";

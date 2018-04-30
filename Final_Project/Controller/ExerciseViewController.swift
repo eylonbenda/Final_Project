@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ExerciseViewController: UIViewController {
     
@@ -15,6 +16,9 @@ class ExerciseViewController: UIViewController {
     @IBOutlet weak var exDesc: UILabel!
     
     
+  
+   
+    var currentUser : User?
     var exercise : Exercise?
     override func viewDidLoad() {
         
@@ -30,7 +34,41 @@ class ExerciseViewController: UIViewController {
         }
     
     }
-
+    
+    
+    @IBAction func addExcercise(_ sender: Any) {
+        if Auth.auth().currentUser != nil {
+            let uid = Auth.auth().currentUser?.uid
+            Model.instance.getUser(uid: uid!, callback: { (user) in
+                self.currentUser = user
+                if self.currentUser?.myPlans == nil {
+                    //TODO : 1) Create list of plans
+                    //TODO : 2) Add excerise to the plan created
+                    Model.instance.addPlanToUser(user: self.currentUser!)
+                }
+                else{
+                    /* TODO:
+                     ask user if he wants to use the current plan
+                     if true :
+                     Choose plan
+                     Add excerise to the plan
+                     else
+                     create plan
+                     Add excerise to the plan created
+                     
+                     */
+                }
+                
+            })
+            
+        } else {
+          
+            performSegue(withIdentifier: "goToAuth", sender: self)
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
