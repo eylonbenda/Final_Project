@@ -10,6 +10,7 @@ import Foundation
 class Comment{
     var author:String?
     var content: String?
+    var commentID : String?
     var user : User?
     
     init(content : String,user : User) {
@@ -21,11 +22,13 @@ class Comment{
     init(content : String,author : String) {
         self.content = content
         self.author = author
+        self.commentID = NSUUID().uuidString
     }
     
     init(json: [String:Any]){
         self.author = json["author"] as? String
         self.content = json["content"] as? String
+        self.commentID = json["commentID"] as? String
         
     }
     
@@ -33,6 +36,7 @@ class Comment{
         var jsonObject = [String:Any]()
         jsonObject["author"] = self.author
         jsonObject["content"] = self.content
+        jsonObject["commentID"] = self.commentID
       return jsonObject
     }
 }

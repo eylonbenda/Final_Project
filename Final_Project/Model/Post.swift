@@ -87,7 +87,7 @@ class Post {
     {
         var map=[String:Any]()
         for  comment in myComments{
-            map[comment.author!] = comment.commentToJson()
+            map[comment.commentID!] = comment.commentToJson()
         }
         return map
     }

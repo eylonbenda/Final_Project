@@ -34,6 +34,8 @@ class CommentsForPostViewController: UIViewController , UITableViewDelegate , UI
         let comment = commmentsList[indexPath.row]
         cell.userName.text = comment.author
         cell.commentContent.text = comment.content
+        cell.imageUser.layer.cornerRadius = cell.imageUser.bounds.width / 2.0
+        cell.imageUser.layer.masksToBounds = true
         
         return cell
         
