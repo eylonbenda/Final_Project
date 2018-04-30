@@ -7,6 +7,7 @@ provides-member:
 - ["13Final_Project4PlanC", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- !private "!="
 - "AssignmentPrecedence"
 - "CastingPrecedence"
 - "Exercise"
@@ -19,6 +20,8 @@ depends-member:
 - ["Sa", "init"]
 - !private ["s23BidirectionalCollectionP", "append"]
 - ["s23BidirectionalCollectionP", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["s7CVarArgP", "_getBuiltinLogicValue"]
 - !private ["s7CVarArgP", "append"]
 - ["s7CVarArgP", "init"]
 - !private ["s7CVarArgP", "subscript"]
@@ -29,21 +32,27 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "append"]
 - ["s28CustomDebugStringConvertibleP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "subscript"]
+- !private ["s29CustomPlaygroundQuickLookableP", "_getBuiltinLogicValue"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "_getBuiltinLogicValue"]
 - !private ["s17CustomReflectableP", "append"]
 - ["s17CustomReflectableP", "init"]
 - !private ["s17CustomReflectableP", "subscript"]
+- !private ["s23CustomStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s23CustomStringConvertibleP", "append"]
 - ["s23CustomStringConvertibleP", "init"]
 - !private ["s23CustomStringConvertibleP", "subscript"]
+- !private ["s9DecodableP", "_getBuiltinLogicValue"]
 - !private ["s9DecodableP", "append"]
 - ["s9DecodableP", "init"]
 - !private ["s9DecodableP", "subscript"]
 - !private ["s10DictionaryV", "init"]
 - !private ["s10DictionaryV", "subscript"]
+- !private ["s9EncodableP", "_getBuiltinLogicValue"]
 - !private ["s9EncodableP", "append"]
 - ["s9EncodableP", "init"]
 - !private ["s9EncodableP", "subscript"]
+- !private ["s9EquatableP", "_getBuiltinLogicValue"]
 - !private ["s9EquatableP", "append"]
 - ["s9EquatableP", "init"]
 - !private ["s9EquatableP", "subscript"]
@@ -52,12 +61,15 @@ depends-member:
 - !private ["13Final_Project8ExerciseC", "toJson"]
 - !private ["s25ExpressibleByArrayLiteralP", "append"]
 - ["s25ExpressibleByArrayLiteralP", "init"]
+- !private ["s27ExpressibleByBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "init"]
 - !private ["s30ExpressibleByDictionaryLiteralP", "subscript"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["s8HashableP", "_getBuiltinLogicValue"]
 - !private ["s8HashableP", "init"]
+- !private ["s25LosslessStringConvertibleP", "_getBuiltinLogicValue"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["s17MutableCollectionP", "append"]
@@ -87,11 +99,13 @@ depends-member:
 - ["s14_ArrayProtocolP", "init"]
 - !private ["s24_DestructorSafeContainerP", "append"]
 - ["s24_DestructorSafeContainerP", "init"]
+- !private ["s35_ExpressibleByBuiltinBooleanLiteralP", "_getBuiltinLogicValue"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
 - !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
 - !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
 - !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s21_ObjectiveCBridgeableP", "_getBuiltinLogicValue"]
 - !private ["s21_ObjectiveCBridgeableP", "append"]
 - ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s21_ObjectiveCBridgeableP", "subscript"]
@@ -99,6 +113,7 @@ depends-member:
 depends-nominal:
 - "Sa"
 - "s23BidirectionalCollectionP"
+- !private "Sb"
 - "s7CVarArgP"
 - "s10CollectionP"
 - !private "s10ComparableP"
@@ -112,6 +127,7 @@ depends-nominal:
 - "s9EquatableP"
 - !private "13Final_Project8ExerciseC"
 - "s25ExpressibleByArrayLiteralP"
+- !private "s27ExpressibleByBooleanLiteralP"
 - !private "s30ExpressibleByDictionaryLiteralP"
 - !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
 - !private "s26ExpressibleByStringLiteralP"
@@ -130,6 +146,7 @@ depends-nominal:
 - !private "s20TextOutputStreamableP"
 - "s14_ArrayProtocolP"
 - "s24_DestructorSafeContainerP"
+- !private "s35_ExpressibleByBuiltinBooleanLiteralP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
 - !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
